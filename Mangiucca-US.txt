@@ -1,0 +1,4 @@
+As a pilot, I want to participate in a race, so that I can compete against other pilots.
+As a go-kart track manager, I want to manage tournaments, so that I can create races for pilots
+As a referee, I want to see the result of the race, so that I can assign points in a leaderboard.
+

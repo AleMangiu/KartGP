@@ -1,0 +1,3 @@
+The system shall provide a list of available races.
+The system shall display a fillable form with the information of the tournaments.
+The system shall display the result of the race.

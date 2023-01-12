@@ -1,0 +1,18 @@
+Use Case Internal Steps:
+name: Join Tournament:
+1. The pilot requests to join tournament.
+2. Log in
+3. The system gets available tournaments from the DB.
+4. The system displays available tournaments.
+5. The pilot selects the tournament.
+6. The system displays the entrance fee.
+7. The system asks the pilot to select the payment method.
+8. The pilot selects to pay cash.
+9. The System display receipt.
+10. The system terminates the use case.
+
+3a. DB does not respond: The system notifies the pilot and terminates the use case.
+4a. There are not avialable tournaments: The system notifies the pilot and terminates the use case.
+8a. The pilot wants to pay via PayPal: The pilot selects to pay via PayPal.
+8b. PayPal.
+10a. The pilot requests to view the tournament entries: The system displays the tournament entries.
