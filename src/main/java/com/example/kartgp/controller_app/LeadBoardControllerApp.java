@@ -1,0 +1,21 @@
+package com.example.kartgp.controller_app;
+
+import com.example.kartgp.bean.LeadBoardBean;
+import com.example.kartgp.dao.LeadBoardDao;
+import com.example.kartgp.entity.LeadBoard;
+
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
+
+public class LeadBoardControllerApp {
+    public static List<LeadBoardBean> getLeadBoard() throws SQLException {
+        LeadBoardDao leadBoardDao = new LeadBoardDao();
+        var leadBoardsBean = new ArrayList<LeadBoardBean>();
+        var leadBoards = leadBoardDao.GetLeadboard();
+        for (LeadBoard leadBoard : leadBoards) {
+            leadBoardsBean.add(new LeadBoardBean(leadBoard.getDriver(), leadBoard.getNumberRace(), leadBoard.getTotalPoint()));
+        }
+        return  leadBoardsBean;
+    }
+}
