@@ -490,7 +490,7 @@ public class MainController implements Initializable {
         viewAllTournamentLocation.setCellValueFactory(new  PropertyValueFactory<MyTournament, String>(location));
         viewAllTournamentDate.setCellValueFactory(new PropertyValueFactory<MyTournament, LocalDate>("date"));
         viewAllTournamentCost.setCellValueFactory(new PropertyValueFactory<MyTournament, Integer>("cost"));
-        var listMtTournament = TournamentControllerApp.GetAllTournaments();
+        var listMtTournament = TournamentControllerApp.getAllTournaments();
         ObservableList<MyTournament> list = FXCollections.observableArrayList(listMtTournament);
         tableAllTournament.setItems(list);
 
@@ -586,7 +586,7 @@ public class MainController implements Initializable {
         refereeLocation.setCellValueFactory(new  PropertyValueFactory<MyTournament, String>(location));
         refereeDate.setCellValueFactory(new  PropertyValueFactory<MyTournament, LocalDate>("date"));
         refereeCost.setCellValueFactory(new  PropertyValueFactory<MyTournament, Integer>("cost"));
-        var listMtTournament = TournamentControllerApp.GetAllTournaments();
+        var listMtTournament = TournamentControllerApp.getAllTournaments();
         ObservableList<MyTournament> list = FXCollections.observableArrayList(listMtTournament);
         refereeTable.setItems(list);
 
@@ -629,7 +629,7 @@ public class MainController implements Initializable {
         refereeDetailTournament.setCellValueFactory(new  PropertyValueFactory<SubscriptionBean, String>("tournament"));
         refereeDetailTournamentId.setCellValueFactory(new  PropertyValueFactory<SubscriptionBean, Integer>("idTournament"));
         refereeDetailPoint.setCellValueFactory(new  PropertyValueFactory<SubscriptionBean, Integer>("point"));
-        var listMtTournament = SubscriptionControllerApp.GetTournamentSubscription(id);
+        var listMtTournament = SubscriptionControllerApp.getTournamentSubscription(id);
         ObservableList<SubscriptionBean> list = FXCollections.observableArrayList(listMtTournament);
         table.setItems(list);
 
@@ -712,15 +712,15 @@ public class MainController implements Initializable {
     }
 
     private void download(MyTournament tournament) throws SQLException {
-        var driverList = SubscriptionControllerApp.GetTournamentSubscription(tournament.getId());
+        var driverList = SubscriptionControllerApp.getTournamentSubscription(tournament.getId());
         FileGeneretor.generateFile(tournament.getName(), driverList.toString());
         System.out.println("File created successfully!");
     }
 
     private void setRoleList() {
-        List<String> ListRole = new ArrayList<>(Arrays.asList(DataList.role));
+        List<String> listRole = new ArrayList<>(Arrays.asList(DataList.role));
 
-        ObservableList<String> listData = FXCollections.observableArrayList(ListRole);
+        ObservableList<String> listData = FXCollections.observableArrayList(listRole);
         loginRole.setItems(listData);
     }
 

@@ -32,17 +32,17 @@ public class TournamentControllerApp {
         return tournamentBeans;
     }
 
-    public static List<MyTournament> GetAllTournaments() throws Exception {
+    public static List<MyTournament> getAllTournaments() throws Exception {
         TournamentDao tournamentDao = new TournamentDao();
         List<Tournament> tournamentList = tournamentDao.getAllTournaments();
         List<MyTournament> tournamentBeans = new ArrayList<>();
         for (Tournament tournament : tournamentList) {
-            var Id = tournament.getId();
+            var id = tournament.getId();
             var name = tournament.getName();
             var location = tournament.getLocation();
             var cost = tournament.getCost();
             var date = tournament.getDate();
-            MyTournament tournamentBean = new MyTournament(Id, name, location, date, cost);
+            MyTournament tournamentBean = new MyTournament(id, name, location, date, cost);
             tournamentBeans.add(tournamentBean);
         }
         return tournamentBeans;

@@ -40,7 +40,7 @@ public class TournamentDao {
         }
     }
 
-    public List<Tournament> getAllByAdminIdTournaments(int Id) throws SQLException {
+    public List<Tournament> getAllByAdminIdTournaments(int id) throws SQLException {
         Connection conn = DbConnection.getConnection();
         try (
                 PreparedStatement stmt = conn.prepareStatement(
@@ -50,7 +50,7 @@ public class TournamentDao {
                 )
 
         ){
-            stmt.setInt(1, Id);
+            stmt.setInt(1, id);
             try (ResultSet rs = stmt.executeQuery()) {
                 if (!rs.first()) {
                     throw new Exception("Tournaments not found");

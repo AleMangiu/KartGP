@@ -12,7 +12,7 @@ public class LeadBoardControllerApp {
     public static List<LeadBoardBean> getLeadBoard() throws SQLException {
         LeadBoardDao leadBoardDao = new LeadBoardDao();
         var leadBoardsBean = new ArrayList<LeadBoardBean>();
-        var leadBoards = leadBoardDao.GetLeadboard();
+        var leadBoards = leadBoardDao.getLeadboard();
         for (LeadBoard leadBoard : leadBoards) {
             leadBoardsBean.add(new LeadBoardBean(leadBoard.getDriver(), leadBoard.getNumberRace(), leadBoard.getTotalPoint()));
         }

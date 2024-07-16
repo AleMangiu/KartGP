@@ -28,10 +28,10 @@ public class SubscriptionControllerApp {
         }
     }
 
-    public static List<SubscriptionBean> GetTournamentSubscription(int id) throws SQLException {
+    public static List<SubscriptionBean> getTournamentSubscription(int id) throws SQLException {
         SubscriptionDao subscriptionDao = new SubscriptionDao();
         List<SubscriptionBean> subscriptionBeans = new ArrayList<>();
-        var subscriptionList = subscriptionDao.GetTournamentSubscription(id);
+        var subscriptionList = subscriptionDao.getTournamentSubscription(id);
         for (Subscription subscription : subscriptionList) {
             var driver = subscription.getDriver();
             var tournament = subscription.getTournament();
@@ -49,13 +49,13 @@ public class SubscriptionControllerApp {
         var tournamentList = subscriptionDao.getAllSubscriptionsByUser(id);
         List<MyTournament> tournamentBeans = new ArrayList<>();
         for (Tournament tournament : tournamentList) {
-            var Id = tournament.getId();
+            var id1 = tournament.getId();
             var name = tournament.getName();
             var location = tournament.getLocation();
             var number = tournament.getNumber();
             var cost = tournament.getCost();
             var date = tournament.getDate();
-            MyTournament tournamentBean = new MyTournament(Id, name, location, date, cost);
+            MyTournament tournamentBean = new MyTournament(id1, name, location, date, cost);
             tournamentBeans.add(tournamentBean);
         }
         return tournamentBeans;
@@ -63,6 +63,6 @@ public class SubscriptionControllerApp {
 
     public static void updateSubscription(int point, int id, int tournamentId) throws SQLException {
         SubscriptionDao subscriptionDao = new SubscriptionDao();
-        subscriptionDao.UpdateSubscription(point, id, tournamentId);
+        subscriptionDao.updateSubscription(point, id, tournamentId);
     }
 }

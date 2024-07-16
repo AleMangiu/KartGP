@@ -13,7 +13,7 @@ import java.util.List;
 
 public class LeadBoardDao {
 
-    public List<LeadBoard> GetLeadboard() throws SQLException {
+    public List<LeadBoard> getLeadboard() throws SQLException {
         Connection conn = DbConnection.getConnection();
         try (
                 PreparedStatement stmt = conn.prepareStatement(

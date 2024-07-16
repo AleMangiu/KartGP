@@ -1,7 +1,5 @@
 package com.example.kartgp.dao;
 
-import com.example.kartgp.bean.TournamentBean;
-import com.example.kartgp.bean.UserBean;
 import com.example.kartgp.database.DbConnection;
 import com.example.kartgp.database.Queries;
 import com.example.kartgp.entity.Subscription;
@@ -12,7 +10,6 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Logger;
@@ -45,7 +42,7 @@ public class SubscriptionDao {
         }
     }
 
-    public List<Subscription> GetTournamentSubscription(int id) throws SQLException {
+    public List<Subscription> getTournamentSubscription(int id) throws SQLException {
         Connection conn = DbConnection.getConnection();
         try (
                 PreparedStatement stmt = conn.prepareStatement(
@@ -79,7 +76,7 @@ public class SubscriptionDao {
         }
     }
 
-    public List<Tournament> getAllSubscriptionsByUser(int Id) throws SQLException {
+    public List<Tournament> getAllSubscriptionsByUser(int id) throws SQLException {
         Connection conn = DbConnection.getConnection();
         try (
                 PreparedStatement stmt = conn.prepareStatement(
@@ -88,7 +85,7 @@ public class SubscriptionDao {
                         ResultSet.CONCUR_READ_ONLY
                 )
         ){
-            stmt.setInt(1, Id);
+            stmt.setInt(1, id);
             try (ResultSet rs = stmt.executeQuery()) {
                 if (!rs.first()) {
                     throw new Exception("Tournaments not found");
@@ -115,7 +112,7 @@ public class SubscriptionDao {
         }
     }
 
-    public void UpdateSubscription(int point ,int id, int tournamentId) throws SQLException {
+    public void updateSubscription(int point , int id, int tournamentId) throws SQLException {
         Connection conn = DbConnection.getConnection();
         try (
                 PreparedStatement stmt = conn.prepareStatement(
