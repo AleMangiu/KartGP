@@ -405,13 +405,14 @@ public class MainController implements Initializable {
 
     @FXML
     public void viewMyTournamentForm(ActionEvent actionEvent) throws Exception {
+        String location = "location";
         admin_page.setVisible(false);
         admin_create_tournament.setVisible(false);
         view_my_tournament.setVisible(true);
         admin_name_tournament.setText(userGlobal.getUsername());
         view_my_tournament_id.setCellValueFactory(new PropertyValueFactory<MyTournament, Integer>("id"));
         view_my_tournament_name.setCellValueFactory(new  PropertyValueFactory<MyTournament, String>("name"));
-        view_my_tournament_location.setCellValueFactory(new  PropertyValueFactory<MyTournament, String>("location"));
+        view_my_tournament_location.setCellValueFactory(new  PropertyValueFactory<MyTournament, String>(location));
         view_my_tournament_date.setCellValueFactory(new  PropertyValueFactory<MyTournament, LocalDate>("date"));
         var listMtTournament = TournamentControllerApp.getAllByAdminIdTournaments(userGlobal.getId());
         ObservableList<MyTournament> list = FXCollections.observableArrayList(listMtTournament);
@@ -480,12 +481,13 @@ public class MainController implements Initializable {
 
     @FXML
     public void joinTournament() throws Exception {
+        String location = "location";
         driver_page.setVisible(false);
         view_all_tournament.setVisible(true);
         driver_name1.setText(userGlobal.getUsername());
         view_all_tournament_id.setCellValueFactory(new PropertyValueFactory<MyTournament, Integer>("id"));
         view_all_tournament_name.setCellValueFactory(new PropertyValueFactory<MyTournament, String>("name"));
-        view_all_tournament_location.setCellValueFactory(new  PropertyValueFactory<MyTournament, String>("location"));
+        view_all_tournament_location.setCellValueFactory(new  PropertyValueFactory<MyTournament, String>(location));
         view_all_tournament_date.setCellValueFactory(new PropertyValueFactory<MyTournament, LocalDate>("date"));
         view_all_tournament_cost.setCellValueFactory(new PropertyValueFactory<MyTournament, Integer>("cost"));
         var listMtTournament = TournamentControllerApp.GetAllTournaments();
@@ -538,12 +540,13 @@ public class MainController implements Initializable {
 
     @FXML
     public void viewMySubscription() throws SQLException {
+        String location = "location";
         driver_page.setVisible(false);
         driver_my_subscription.setVisible(true);
         driver_my_subscription_name.setText(userGlobal.getUsername());
         driver_my_subscription_id.setCellValueFactory(new PropertyValueFactory<MyTournament, Integer>("id"));
         driver_my_subscription_tournament_name.setCellValueFactory(new PropertyValueFactory<MyTournament, String>("name"));
-        driver_my_subscription_location.setCellValueFactory(new  PropertyValueFactory<MyTournament, String>("location"));
+        driver_my_subscription_location.setCellValueFactory(new  PropertyValueFactory<MyTournament, String>(location));
         driver_my_subscription_date.setCellValueFactory(new PropertyValueFactory<MyTournament, LocalDate>("date"));
         driver_my_subscription_cost.setCellValueFactory(new PropertyValueFactory<MyTournament, Integer>("cost"));
         var listMtTournament = SubscriptionControllerApp.getAllSubscriptionsByUser(userGlobal.getId());
@@ -575,11 +578,12 @@ public class MainController implements Initializable {
     //region Referee
 
     private void goToRefereePage() throws Exception {
+        String location = "location";
         referee_page.setVisible(true);
         referee_name.setText(userGlobal.getUsername());
         referee_tournament_id.setCellValueFactory(new PropertyValueFactory<MyTournament, Integer>("id"));
         referee_tournament_name.setCellValueFactory(new  PropertyValueFactory<MyTournament, String>("name"));
-        referee_location.setCellValueFactory(new  PropertyValueFactory<MyTournament, String>("location"));
+        referee_location.setCellValueFactory(new  PropertyValueFactory<MyTournament, String>(location));
         referee_date.setCellValueFactory(new  PropertyValueFactory<MyTournament, LocalDate>("date"));
         referee_cost.setCellValueFactory(new  PropertyValueFactory<MyTournament, Integer>("cost"));
         var listMtTournament = TournamentControllerApp.GetAllTournaments();

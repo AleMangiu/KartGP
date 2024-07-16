@@ -3,7 +3,7 @@ package com.example.kartgp.bean;
 public class SubscriptionBean {
     private int point;
     private String driver;
-    public String tournament;
+    private String tournament;
     private int idDriver;
     private int idTournament;
 
