@@ -16,16 +16,12 @@ import java.util.List;
 public class SubscriptionControllerApp {
 
     public static void payAndSubscription(UserBean userBean, TournamentBean tournamentBean) throws Exception {
-        try {
-            SubscriptionDao subscriptionDao = new SubscriptionDao();
-            User user = new User(userBean.getId(), userBean.getUsername());
-            Tournament tournament = new Tournament(tournamentBean.getId(), tournamentBean.getName());
-            subscriptionDao.payAndSubscription(user, tournament);
+        SubscriptionDao subscriptionDao = new SubscriptionDao();
+        User user = new User(userBean.getId(), userBean.getUsername());
+        Tournament tournament = new Tournament(tournamentBean.getId(), tournamentBean.getName());
+        subscriptionDao.payAndSubscription(user, tournament);
 
-            System.out.print("You have subscription and pay");
-        } catch (Exception e) {
-            throw e;
-        }
+        System.out.print("You have subscription and pay");
     }
 
     public static List<SubscriptionBean> getTournamentSubscription(int id) throws SQLException {
@@ -52,7 +48,6 @@ public class SubscriptionControllerApp {
             var id1 = tournament.getId();
             var name = tournament.getName();
             var location = tournament.getLocation();
-            var number = tournament.getNumber();
             var cost = tournament.getCost();
             var date = tournament.getDate();
             MyTournament tournamentBean = new MyTournament(id1, name, location, date, cost);

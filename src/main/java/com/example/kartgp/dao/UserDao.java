@@ -14,7 +14,7 @@ public class UserDao {
 
     private final Logger logger = Logger.getLogger(UserDao.class.getName());
 
-    public User login(String username, String password) throws SQLException, Exception {
+    public User login(String username, String password) throws Exception {
 
         Connection conn = DbConnection.getConnection();
         try (
@@ -41,7 +41,7 @@ public class UserDao {
         }
     }
 
-    public void signing(String username, String password, String role) throws SQLException, Exception {
+    public void signing(String username, String password, String role) throws Exception {
         Connection conn = DbConnection.getConnection();
         try (
                 PreparedStatement stmt = conn.prepareStatement(

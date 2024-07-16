@@ -5,7 +5,6 @@ import com.example.kartgp.database.Queries;
 import com.example.kartgp.entity.Tournament;
 
 import java.sql.*;
-import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Logger;
@@ -14,7 +13,7 @@ public class TournamentDao {
 
     private final Logger logger = Logger.getLogger(TournamentDao.class.getName());
 
-    public void createTournament(Tournament tournament, int userId) throws SQLException, Exception {
+    public void createTournament(Tournament tournament, int userId) throws Exception {
         Connection conn = DbConnection.getConnection();
         try (
                 PreparedStatement stmt = conn.prepareStatement(

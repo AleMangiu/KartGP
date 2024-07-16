@@ -2,17 +2,14 @@ package com.example.kartgp.dao;
 
 import com.example.kartgp.entity.User;
 import org.junit.jupiter.api.Test;
-
-import java.sql.SQLException;
-
 import static org.junit.jupiter.api.Assertions.*;
 import static org.junit.jupiter.api.Assertions.fail;
 
-public class UserDaoTest {
+    class UserDaoTest {
     @Test
     void loginWrongUser() {
         assertThrows(Exception.class, () -> {
-            String username = "testUsername";
+            String username = "testUsernam";
             String password = "testPassword";
             UserDao userDao = new UserDao();
             userDao.login(username, password);

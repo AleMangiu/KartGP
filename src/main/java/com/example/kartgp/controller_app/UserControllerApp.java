@@ -10,7 +10,7 @@ public class UserControllerApp {
 
     //region get
 
-    public static void login(UserBean userBean) throws Exception, SQLException {
+    public static void login(UserBean userBean) throws Exception{
         UserDao userDao = new UserDao();
         User user = userDao.login(userBean.getUsername(), userBean.getPassword());
         userBean.setRole(user.getRole());

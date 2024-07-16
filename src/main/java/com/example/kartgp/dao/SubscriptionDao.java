@@ -18,7 +18,7 @@ public class SubscriptionDao {
 
     private final Logger logger = Logger.getLogger(SubscriptionDao.class.getName());
 
-    public void payAndSubscription(User login, Tournament tournament) throws SQLException, Exception {
+    public void payAndSubscription(User login, Tournament tournament) throws Exception {
         Connection conn = DbConnection.getConnection();
         try (
                 PreparedStatement stmt = conn.prepareStatement(

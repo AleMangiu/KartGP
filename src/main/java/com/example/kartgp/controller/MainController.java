@@ -730,8 +730,7 @@ public class MainController implements Initializable {
         userBean.setCheckPassword(adminConfirmPassword.getText());
         userBean.setRole(loginRole.getValue());
         userBean.checkIfPassIsEqual(userBean.getPassword(), userBean.getCheckPassword());
-        Boolean check = UserControllerApp.signing(userBean);
-        if(check) {
+        if(UserControllerApp.signing(userBean)) {
             adminForm.setVisible(false);
             loginForm.setVisible(true);
         }
