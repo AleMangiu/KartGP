@@ -30,268 +30,268 @@ public class MainController implements Initializable {
     //region properties
 
     @FXML
-    private AnchorPane driver_leadboard;
+    private AnchorPane driverLeadboard;
 
     @FXML
-    private TextArea driver_name_lead;
+    private TextArea driverNameLead;
 
     @FXML
-    private TableColumn<LeadBoardBean, String> driver_name_leadbooard;
+    private TableColumn<LeadBoardBean, String> driverNameLeadbooard;
 
     @FXML
-    private TableColumn<LeadBoardBean, Integer> driver_number_race_leadbooard;
+    private TableColumn<LeadBoardBean, Integer> driverNumberRaceLeadbooard;
 
     @FXML
-    private TableColumn<LeadBoardBean, Integer> driver_point_leadbooard;
+    private TableColumn<LeadBoardBean, Integer> driverPointLeadbooard;
 
     @FXML
-    private TableView<LeadBoardBean> driver_table_leadbooard;
+    private TableView<LeadBoardBean> driverTableLeadbooard;
 
     @FXML
-    private TextField driver_name_confirm;
+    private TextField driverNameConfirm;
     @FXML
-    private Spinner<Integer> driver_id_confirm;
+    private Spinner<Integer> driverIdConfirm;
     @FXML
-    private TextField driver_tournament_confirm;
+    private TextField driverTournamentConfirm;
     @FXML
-    private Spinner<Integer> driver_tournament_id_confirm;
+    private Spinner<Integer> driverTournamentIdConfirm;
 
     @FXML
-    private Spinner<Integer> driver_point_confirm;
+    private Spinner<Integer> driverPointConfirm;
 
     @FXML
     private Button backToHomeFromRefereeDetail;
 
     @FXML
-    private TableColumn referee_detail_confirm;
+    private TableColumn refereeDetailConfirm;
 
     @FXML
-    private TableColumn<SubscriptionBean, String> referee_detail_driver;
+    private TableColumn<SubscriptionBean, String> refereeDetailDriver;
 
     @FXML
-    private TableColumn<SubscriptionBean, Integer> referee_detail_driver_id;
+    private TableColumn<SubscriptionBean, Integer> refereeDetailDriverId;
 
     @FXML
-    private TextArea referee_detail_name;
+    private TextArea refereeDetailName;
 
     @FXML
-    private TableColumn<SubscriptionBean, Integer> referee_detail_point;
+    private TableColumn<SubscriptionBean, Integer> refereeDetailPoint;
 
     @FXML
-    private TableColumn<SubscriptionBean, String> referee_detail_tournament;
+    private TableColumn<SubscriptionBean, String> refereeDetailTournament;
 
     @FXML
-    private TableColumn<SubscriptionBean, Integer> referee_detail_tournamentId;
+    private TableColumn<SubscriptionBean, Integer> refereeDetailTournamentId;
 
     @FXML
-    private AnchorPane referee_detail_view;
+    private AnchorPane refereeDetailView;
 
     @FXML
     private TableView<SubscriptionBean> table;
 
     @FXML
-    public TableColumn referee_detail;
+    public TableColumn refereeDetail;
 
     @FXML
-    public TableColumn<MyTournament, Integer> referee_cost;
+    public TableColumn<MyTournament, Integer> refereeCost;
 
     @FXML
-    public TableColumn<MyTournament, LocalDate> referee_date;
+    public TableColumn<MyTournament, LocalDate> refereeDate;
 
     @FXML
-    public TableColumn<MyTournament, String> referee_location;
+    public TableColumn<MyTournament, String> refereeLocation;
 
     @FXML
-    private TextArea referee_name;
+    private TextArea refereeName;
 
     @FXML
-    private AnchorPane referee_page;
+    private AnchorPane refereePage;
 
     @FXML
-    public TableView<MyTournament> referee_table;
+    public TableView<MyTournament> refereeTable;
 
     @FXML
-    public TableColumn<MyTournament, Integer> referee_tournament_id;
+    public TableColumn<MyTournament, Integer> refereeTournamentId;
 
     @FXML
-    public TableColumn<MyTournament, String> referee_tournament_name;
+    public TableColumn<MyTournament, String> refereeTournamentName;
 
     @FXML
-    private AnchorPane driver_my_subscription;
+    private AnchorPane driverMySubscription;
 
     @FXML
-    public TableColumn<MyTournament, Integer> driver_my_subscription_cost;
+    public TableColumn<MyTournament, Integer> driverMySubscriptionCost;
 
     @FXML
-    public TableColumn<MyTournament, LocalDate> driver_my_subscription_date;
+    public TableColumn<MyTournament, LocalDate> driverMySubscriptionDate;
 
     @FXML
-    public TableColumn<MyTournament, Integer> driver_my_subscription_id;
+    public TableColumn<MyTournament, Integer> driverMySubscriptionId;
 
     @FXML
-    public TableColumn<MyTournament, String> driver_my_subscription_location;
+    public TableColumn<MyTournament, String> driverMySubscriptionLocation;
 
     @FXML
-    public TextArea driver_my_subscription_name;
+    public TextArea driverMySubscriptionName;
 
     @FXML
-    public TableView<MyTournament> driver_my_subscription_table;
+    public TableView<MyTournament> driverMySubscriptionTable;
 
     @FXML
-    public TableColumn<MyTournament, String> driver_my_subscription_tournament_name;
+    public TableColumn<MyTournament, String> driverMySubscriptionTournamentName;
 
     @FXML
-    private AnchorPane view_all_tournament;
+    private AnchorPane viewAllTournament;
 
     @FXML
-    public TableView<MyTournament> table_all_tournament;
+    public TableView<MyTournament> tableAllTournament;
 
     @FXML
-    public TableColumn<MyTournament, Integer> view_all_tournament_cost;
+    public TableColumn<MyTournament, Integer> viewAllTournamentCost;
 
     @FXML
-    public TableColumn<MyTournament, LocalDate> view_all_tournament_date;
+    public TableColumn<MyTournament, LocalDate> viewAllTournamentDate;
 
     @FXML
-    public TableColumn<MyTournament, Integer> view_all_tournament_id;
+    public TableColumn<MyTournament, Integer> viewAllTournamentId;
 
     @FXML
-    public TableColumn<MyTournament, String> view_all_tournament_location;
+    public TableColumn<MyTournament, String> viewAllTournamentLocation;
 
     @FXML
-    public TableColumn<MyTournament, String> view_all_tournament_name;
+    public TableColumn<MyTournament, String> viewAllTournamentName;
 
     @FXML
-    public TableColumn<MyTournament, String> view_all_action;
+    public TableColumn<MyTournament, String> viewAllAction;
 
     @FXML
-    private TextArea driver_name1;
+    private TextArea driverName1;
 
     @FXML
-    private AnchorPane driver_page;
+    private AnchorPane driverPage;
 
     @FXML
-    private TextArea driver_name;
+    private TextArea driverName;
 
     @FXML
-    public TableColumn view_my_tournament_button;
+    public TableColumn viewMyTournamentButton;
 
     @FXML
-    public TableView<MyTournament> table_my_tournament;
+    public TableView<MyTournament> tableMyTournament;
 
     @FXML
-    public TableColumn<MyTournament, Integer> view_my_tournament_id;
+    public TableColumn<MyTournament, Integer> viewMyTournamentId;
 
     @FXML
-    public TableColumn<MyTournament, String> view_my_tournament_name;
+    public TableColumn<MyTournament, String> viewMyTournamentName;
 
     @FXML
-    public TableColumn<MyTournament, String> view_my_tournament_location;
+    public TableColumn<MyTournament, String> viewMyTournamentLocation;
 
     @FXML
-    public TableColumn<MyTournament, LocalDate> view_my_tournament_date;
+    public TableColumn<MyTournament, LocalDate> viewMyTournamentDate;
 
     @FXML
-    private AnchorPane view_my_tournament;
+    private AnchorPane viewMyTournament;
 
     @FXML
-    private TextArea admin_name_tournament;
+    private TextArea adminNameTournament;
 
     @FXML
-    private AnchorPane admin_form;
+    private AnchorPane adminForm;
 
     @FXML
-    private AnchorPane admin_create_tournament;
+    private AnchorPane adminCreateTournament;
 
     @FXML
-    private TextArea admin_name;
+    private TextArea adminName;
 
     @FXML
-    private AnchorPane admin_page;
+    private AnchorPane adminPage;
 
     @FXML
-    private AnchorPane login_form;
+    private AnchorPane loginForm;
 
     @FXML
-    private TextArea admin_name1;
+    private TextArea adminName1;
 
     @FXML
-    private TextField login_username;
+    private TextField loginUsername;
 
     @FXML
-    private PasswordField login_password;
+    private PasswordField loginPassword;
 
     @FXML
-    private Button login_btn;
+    private Button loginBtn;
 
     @FXML
-    private ComboBox<String> login_role;
+    private ComboBox<String> loginRole;
 
     @FXML
-    private TextField admin_username;
+    private TextField adminUsername;
 
     @FXML
-    private PasswordField admin_password;
+    private PasswordField adminPassword;
 
     @FXML
-    private Button admin_signupBtn;
+    private Button adminSignupbtn;
 
     @FXML
-    private Hyperlink admin_signin;
+    private Hyperlink adminSignin;
 
     @FXML
-    private PasswordField admin_confirm_password;
+    private PasswordField adminConfirmPassword;
 
     @FXML
-    private AnchorPane driver_form;
+    private AnchorPane driverForm;
 
     @FXML
-    private TextField driver_username;
+    private TextField driverUsername;
 
     @FXML
-    private PasswordField driver_password;
+    private PasswordField driverPassword;
 
     @FXML
-    private Button driver_signupBtn;
+    private Button driverSignupbtn;
 
     @FXML
-    private Hyperlink driver_signin;
+    private Hyperlink driverSignin;
 
     @FXML
-    private PasswordField driver_confirm_password;
+    private PasswordField driverConfirmPassword;
 
     @FXML
-    private AnchorPane refree_form;
+    private AnchorPane refreeForm;
 
     @FXML
-    private TextField refree_username;
+    private TextField refreeUsername;
 
     @FXML
-    private PasswordField refree_password;
+    private PasswordField refreePassword;
 
     @FXML
-    private Button refree_signupBtn;
+    private Button refreeSignupbtn;
 
     @FXML
-    private Hyperlink refree_signin;
+    private Hyperlink refreeSignin;
 
     @FXML
-    private PasswordField refree_confirm_password;
+    private PasswordField refreeConfirmPassword;
 
     @FXML
-    private TextField tournament_name;
+    private TextField tournamentName;
 
     @FXML
-    private TextField tournament_location;
+    private TextField tournamentLocation;
 
     @FXML
-    private DatePicker tournament_date;
+    private DatePicker tournamentDate;
 
     @FXML
-    private Spinner<Integer> tournament_cost;
+    private Spinner<Integer> tournamentCost;
 
     @FXML
-    private Spinner<Integer> tournament_number;
+    private Spinner<Integer> tournamentNumber;
 
     private UserBean userGlobal;
     //endregion
@@ -302,36 +302,36 @@ public class MainController implements Initializable {
 
     @FXML
     public void logout(){
-        login_form.setVisible(true);
-        admin_page.setVisible(false);
-        driver_page.setVisible(false);
-        referee_page.setVisible(false);
+        loginForm.setVisible(true);
+        adminPage.setVisible(false);
+        driverPage.setVisible(false);
+        refereePage.setVisible(false);
     }
 
     @FXML
     public void login() {
         try {
             UserBean userBean = new UserBean();
-            userBean.setUsername(login_username.getText());
-            userBean.setPassword(login_password.getText());
+            userBean.setUsername(loginUsername.getText());
+            userBean.setPassword(loginPassword.getText());
             userBean.checkField(userBean.getUsername(), userBean.getPassword());
             UserControllerApp.login(userBean);
             userGlobal = userBean;
 
             if(userBean.getRole().equals("Admin")) {
-                admin_page.setVisible(true);
-                login_form.setVisible(false);
-                admin_name.setText(userBean.getUsername());
+                adminPage.setVisible(true);
+                loginForm.setVisible(false);
+                adminName.setText(userBean.getUsername());
             }
 
             if(userBean.getRole().equals("Driver")) {
-                driver_page.setVisible(true);
-                login_form.setVisible(false);
-                driver_name.setText(userBean.getUsername());
+                driverPage.setVisible(true);
+                loginForm.setVisible(false);
+                driverName.setText(userBean.getUsername());
             }
 
             if(userBean.getRole().equals("Referee")) {
-                login_form.setVisible(false);
+                loginForm.setVisible(false);
                 goToRefereePage();
             }
 
@@ -342,48 +342,48 @@ public class MainController implements Initializable {
 
     @FXML
     public void switchForm() {
-        switch (login_role.getSelectionModel().getSelectedItem()) {
+        switch (loginRole.getSelectionModel().getSelectedItem()) {
             case "Admin" -> {
-                admin_form.setVisible(true);
-                refree_form.setVisible(false);
-                driver_form.setVisible(false);
-                login_form.setVisible(false);
+                adminForm.setVisible(true);
+                refreeForm.setVisible(false);
+                driverForm.setVisible(false);
+                loginForm.setVisible(false);
             }
             case "Driver" -> {
-                admin_form.setVisible(false);
-                refree_form.setVisible(false);
-                driver_form.setVisible(true);
-                login_form.setVisible(false);
+                adminForm.setVisible(false);
+                refreeForm.setVisible(false);
+                driverForm.setVisible(true);
+                loginForm.setVisible(false);
             }
             case "Referee" -> {
-                refree_form.setVisible(true);
-                driver_form.setVisible(false);
-                refree_form.setVisible(true);
-                login_form.setVisible(false);
+                refreeForm.setVisible(true);
+                driverForm.setVisible(false);
+                refreeForm.setVisible(true);
+                loginForm.setVisible(false);
             }
         }
     }
 
     @FXML
     public void signinForm() {
-        login_form.setVisible(true);
-        admin_form.setVisible(false);
-        refree_form.setVisible(false);
-        driver_form.setVisible(false);
+        loginForm.setVisible(true);
+        adminForm.setVisible(false);
+        refreeForm.setVisible(false);
+        driverForm.setVisible(false);
     }
 
     @FXML
     public void signup() {
         try {
             UserBean userBean = new UserBean();
-            if (admin_form.isVisible()) {
-                setVisibleOfSigning(userBean, admin_username, admin_password, admin_confirm_password);
+            if (adminForm.isVisible()) {
+                setVisibleOfSigning(userBean, adminUsername, adminPassword, adminConfirmPassword);
             }
-            else if (refree_form.isVisible()) {
-                setVisibleOfSigning(userBean, refree_username, refree_password, refree_confirm_password);
+            else if (refreeForm.isVisible()) {
+                setVisibleOfSigning(userBean, refreeUsername, refreePassword, refreeConfirmPassword);
             }
-            else if (driver_form.isVisible()) {
-                setVisibleOfSigning(userBean, driver_username, driver_password, driver_confirm_password);
+            else if (driverForm.isVisible()) {
+                setVisibleOfSigning(userBean, driverUsername, driverPassword, driverConfirmPassword);
             }
 
         } catch (Exception e) {
@@ -397,26 +397,26 @@ public class MainController implements Initializable {
 
     @FXML
     public void createTournamentForm() {
-        admin_page.setVisible(false);
-        admin_create_tournament.setVisible(true);
-        admin_name1.setText(userGlobal.getUsername());
+        adminPage.setVisible(false);
+        adminCreateTournament.setVisible(true);
+        adminName1.setText(userGlobal.getUsername());
 
     }
 
     @FXML
     public void viewMyTournamentForm(ActionEvent actionEvent) throws Exception {
         String location = "location";
-        admin_page.setVisible(false);
-        admin_create_tournament.setVisible(false);
-        view_my_tournament.setVisible(true);
-        admin_name_tournament.setText(userGlobal.getUsername());
-        view_my_tournament_id.setCellValueFactory(new PropertyValueFactory<MyTournament, Integer>("id"));
-        view_my_tournament_name.setCellValueFactory(new  PropertyValueFactory<MyTournament, String>("name"));
-        view_my_tournament_location.setCellValueFactory(new  PropertyValueFactory<MyTournament, String>(location));
-        view_my_tournament_date.setCellValueFactory(new  PropertyValueFactory<MyTournament, LocalDate>("date"));
+        adminPage.setVisible(false);
+        adminCreateTournament.setVisible(false);
+        viewMyTournament.setVisible(true);
+        adminNameTournament.setText(userGlobal.getUsername());
+        viewMyTournamentId.setCellValueFactory(new PropertyValueFactory<MyTournament, Integer>("id"));
+        viewMyTournamentName.setCellValueFactory(new  PropertyValueFactory<MyTournament, String>("name"));
+        viewMyTournamentLocation.setCellValueFactory(new  PropertyValueFactory<MyTournament, String>(location));
+        viewMyTournamentDate.setCellValueFactory(new  PropertyValueFactory<MyTournament, LocalDate>("date"));
         var listMtTournament = TournamentControllerApp.getAllByAdminIdTournaments(userGlobal.getId());
         ObservableList<MyTournament> list = FXCollections.observableArrayList(listMtTournament);
-        table_my_tournament.setItems(list);
+        tableMyTournament.setItems(list);
 
         Callback<TableColumn<MyTournament, String >, TableCell<MyTournament, String>> cellFactory =(param) ->{
             final TableCell<MyTournament, String> cell = new TableCell<MyTournament, String>(){
@@ -445,34 +445,34 @@ public class MainController implements Initializable {
             return cell;
         };
 
-        view_my_tournament_button.setCellFactory(cellFactory);
+        viewMyTournamentButton.setCellFactory(cellFactory);
     }
 
     @FXML
     public void backToHomeFromCreate() {
-        admin_create_tournament.setVisible(false);
-        admin_page.setVisible(true);
+        adminCreateTournament.setVisible(false);
+        adminPage.setVisible(true);
     }
 
     @FXML
     public void backToHomeFromMytournament(){
-        view_my_tournament.setVisible(false);
-        admin_page.setVisible(true);
+        viewMyTournament.setVisible(false);
+        adminPage.setVisible(true);
     }
     @FXML
     public void createTournament() throws Exception {
 
         TournamentBean tournamentBean = new TournamentBean();
-        tournamentBean.setName(tournament_name.getText());
-        tournamentBean.setLocation(tournament_location.getText());
-        tournamentBean.setCost(tournament_cost.getValue());
-        tournamentBean.setNumber(tournament_number.getValue());
-        tournamentBean.setDate(tournament_date.getValue());
+        tournamentBean.setName(tournamentName.getText());
+        tournamentBean.setLocation(tournamentLocation.getText());
+        tournamentBean.setCost(tournamentCost.getValue());
+        tournamentBean.setNumber(tournamentNumber.getValue());
+        tournamentBean.setDate(tournamentDate.getValue());
         tournamentBean.checkField(tournamentBean.getName(), tournamentBean.getLocation(), tournamentBean.getDate(), tournamentBean.getCost(), tournamentBean.getNumber());
 
         TournamentControllerApp.createTournament(userGlobal, tournamentBean);
 
-        System.out.print("You have successfully created tournament " + tournament_name.getText());
+        System.out.print("You have successfully created tournament " + tournamentName.getText());
     }
 
     //endregion
@@ -482,17 +482,17 @@ public class MainController implements Initializable {
     @FXML
     public void joinTournament() throws Exception {
         String location = "location";
-        driver_page.setVisible(false);
-        view_all_tournament.setVisible(true);
-        driver_name1.setText(userGlobal.getUsername());
-        view_all_tournament_id.setCellValueFactory(new PropertyValueFactory<MyTournament, Integer>("id"));
-        view_all_tournament_name.setCellValueFactory(new PropertyValueFactory<MyTournament, String>("name"));
-        view_all_tournament_location.setCellValueFactory(new  PropertyValueFactory<MyTournament, String>(location));
-        view_all_tournament_date.setCellValueFactory(new PropertyValueFactory<MyTournament, LocalDate>("date"));
-        view_all_tournament_cost.setCellValueFactory(new PropertyValueFactory<MyTournament, Integer>("cost"));
+        driverPage.setVisible(false);
+        viewAllTournament.setVisible(true);
+        driverName1.setText(userGlobal.getUsername());
+        viewAllTournamentId.setCellValueFactory(new PropertyValueFactory<MyTournament, Integer>("id"));
+        viewAllTournamentName.setCellValueFactory(new PropertyValueFactory<MyTournament, String>("name"));
+        viewAllTournamentLocation.setCellValueFactory(new  PropertyValueFactory<MyTournament, String>(location));
+        viewAllTournamentDate.setCellValueFactory(new PropertyValueFactory<MyTournament, LocalDate>("date"));
+        viewAllTournamentCost.setCellValueFactory(new PropertyValueFactory<MyTournament, Integer>("cost"));
         var listMtTournament = TournamentControllerApp.GetAllTournaments();
         ObservableList<MyTournament> list = FXCollections.observableArrayList(listMtTournament);
-        table_all_tournament.setItems(list);
+        tableAllTournament.setItems(list);
 
         Callback<TableColumn<MyTournament, String >, TableCell<MyTournament, String>> cellFactory =(param) ->{
             final TableCell<MyTournament, String> cell = new TableCell<MyTournament, String>(){
@@ -521,56 +521,56 @@ public class MainController implements Initializable {
             return cell;
         };
 
-        view_all_action.setCellFactory(cellFactory);
+        viewAllAction.setCellFactory(cellFactory);
 
     }
 
     @FXML
     public void viewLeaderBoard(ActionEvent actionEvent) throws SQLException {
-        driver_page.setVisible(false);
-        driver_name_lead.setText(userGlobal.getUsername());
-        driver_leadboard.setVisible(true);
-        driver_name_leadbooard.setCellValueFactory(new PropertyValueFactory<LeadBoardBean, String>("driver"));
-        driver_number_race_leadbooard.setCellValueFactory(new PropertyValueFactory<LeadBoardBean, Integer>("numberRace"));
-        driver_point_leadbooard.setCellValueFactory(new  PropertyValueFactory<LeadBoardBean, Integer>("totalPoint"));
+        driverPage.setVisible(false);
+        driverNameLead.setText(userGlobal.getUsername());
+        driverLeadboard.setVisible(true);
+        driverNameLeadbooard.setCellValueFactory(new PropertyValueFactory<LeadBoardBean, String>("driver"));
+        driverNumberRaceLeadbooard.setCellValueFactory(new PropertyValueFactory<LeadBoardBean, Integer>("numberRace"));
+        driverPointLeadbooard.setCellValueFactory(new  PropertyValueFactory<LeadBoardBean, Integer>("totalPoint"));
         var leadBoard = LeadBoardControllerApp.getLeadBoard();
         ObservableList<LeadBoardBean> list = FXCollections.observableArrayList(leadBoard);
-        driver_table_leadbooard.setItems(list);
+        driverTableLeadbooard.setItems(list);
     }
 
     @FXML
     public void viewMySubscription() throws SQLException {
         String location = "location";
-        driver_page.setVisible(false);
-        driver_my_subscription.setVisible(true);
-        driver_my_subscription_name.setText(userGlobal.getUsername());
-        driver_my_subscription_id.setCellValueFactory(new PropertyValueFactory<MyTournament, Integer>("id"));
-        driver_my_subscription_tournament_name.setCellValueFactory(new PropertyValueFactory<MyTournament, String>("name"));
-        driver_my_subscription_location.setCellValueFactory(new  PropertyValueFactory<MyTournament, String>(location));
-        driver_my_subscription_date.setCellValueFactory(new PropertyValueFactory<MyTournament, LocalDate>("date"));
-        driver_my_subscription_cost.setCellValueFactory(new PropertyValueFactory<MyTournament, Integer>("cost"));
+        driverPage.setVisible(false);
+        driverMySubscription.setVisible(true);
+        driverMySubscriptionName.setText(userGlobal.getUsername());
+        driverMySubscriptionId.setCellValueFactory(new PropertyValueFactory<MyTournament, Integer>("id"));
+        driverMySubscriptionTournamentName.setCellValueFactory(new PropertyValueFactory<MyTournament, String>("name"));
+        driverMySubscriptionLocation.setCellValueFactory(new  PropertyValueFactory<MyTournament, String>(location));
+        driverMySubscriptionDate.setCellValueFactory(new PropertyValueFactory<MyTournament, LocalDate>("date"));
+        driverMySubscriptionCost.setCellValueFactory(new PropertyValueFactory<MyTournament, Integer>("cost"));
         var listMtTournament = SubscriptionControllerApp.getAllSubscriptionsByUser(userGlobal.getId());
         ObservableList<MyTournament> list = FXCollections.observableArrayList(listMtTournament);
-        driver_my_subscription_table.setItems(list);
+        driverMySubscriptionTable.setItems(list);
 
     }
 
     @FXML
     public void backToHomeFromLeadBoard(){
-        driver_leadboard.setVisible(false);
-        driver_page.setVisible(true);
+        driverLeadboard.setVisible(false);
+        driverPage.setVisible(true);
     }
 
     @FXML
     public void backToHomeFromAllTournament() {
-        view_all_tournament.setVisible(false);
-        driver_page.setVisible(true);
+        viewAllTournament.setVisible(false);
+        driverPage.setVisible(true);
     }
 
     @FXML
     public void backToHomeFromSubscriptionTable(){
-        driver_my_subscription.setVisible(false);
-        driver_page.setVisible(true);
+        driverMySubscription.setVisible(false);
+        driverPage.setVisible(true);
     }
 
     //endregion
@@ -579,16 +579,16 @@ public class MainController implements Initializable {
 
     private void goToRefereePage() throws Exception {
         String location = "location";
-        referee_page.setVisible(true);
-        referee_name.setText(userGlobal.getUsername());
-        referee_tournament_id.setCellValueFactory(new PropertyValueFactory<MyTournament, Integer>("id"));
-        referee_tournament_name.setCellValueFactory(new  PropertyValueFactory<MyTournament, String>("name"));
-        referee_location.setCellValueFactory(new  PropertyValueFactory<MyTournament, String>(location));
-        referee_date.setCellValueFactory(new  PropertyValueFactory<MyTournament, LocalDate>("date"));
-        referee_cost.setCellValueFactory(new  PropertyValueFactory<MyTournament, Integer>("cost"));
+        refereePage.setVisible(true);
+        refereeName.setText(userGlobal.getUsername());
+        refereeTournamentId.setCellValueFactory(new PropertyValueFactory<MyTournament, Integer>("id"));
+        refereeTournamentName.setCellValueFactory(new  PropertyValueFactory<MyTournament, String>("name"));
+        refereeLocation.setCellValueFactory(new  PropertyValueFactory<MyTournament, String>(location));
+        refereeDate.setCellValueFactory(new  PropertyValueFactory<MyTournament, LocalDate>("date"));
+        refereeCost.setCellValueFactory(new  PropertyValueFactory<MyTournament, Integer>("cost"));
         var listMtTournament = TournamentControllerApp.GetAllTournaments();
         ObservableList<MyTournament> list = FXCollections.observableArrayList(listMtTournament);
-        referee_table.setItems(list);
+        refereeTable.setItems(list);
 
         Callback<TableColumn<MyTournament, String >, TableCell<MyTournament, String>> cellFactory =(param) ->{
             final TableCell<MyTournament, String> cell = new TableCell<MyTournament, String>(){
@@ -617,18 +617,18 @@ public class MainController implements Initializable {
             return cell;
         };
 
-        referee_detail.setCellFactory(cellFactory);
+        refereeDetail.setCellFactory(cellFactory);
     }
 
     private void detail(int id) throws SQLException {
-        referee_page.setVisible(false);
-        referee_detail_view.setVisible(true);
-        referee_detail_name.setText(userGlobal.getUsername());
-        referee_detail_driver_id.setCellValueFactory(new PropertyValueFactory<SubscriptionBean, Integer>("idDriver"));
-        referee_detail_driver.setCellValueFactory(new  PropertyValueFactory<SubscriptionBean, String>("driver"));
-        referee_detail_tournament.setCellValueFactory(new  PropertyValueFactory<SubscriptionBean, String>("tournament"));
-        referee_detail_tournamentId.setCellValueFactory(new  PropertyValueFactory<SubscriptionBean, Integer>("idTournament"));
-        referee_detail_point.setCellValueFactory(new  PropertyValueFactory<SubscriptionBean, Integer>("point"));
+        refereePage.setVisible(false);
+        refereeDetailView.setVisible(true);
+        refereeDetailName.setText(userGlobal.getUsername());
+        refereeDetailDriverId.setCellValueFactory(new PropertyValueFactory<SubscriptionBean, Integer>("idDriver"));
+        refereeDetailDriver.setCellValueFactory(new  PropertyValueFactory<SubscriptionBean, String>("driver"));
+        refereeDetailTournament.setCellValueFactory(new  PropertyValueFactory<SubscriptionBean, String>("tournament"));
+        refereeDetailTournamentId.setCellValueFactory(new  PropertyValueFactory<SubscriptionBean, Integer>("idTournament"));
+        refereeDetailPoint.setCellValueFactory(new  PropertyValueFactory<SubscriptionBean, Integer>("point"));
         var listMtTournament = SubscriptionControllerApp.GetTournamentSubscription(id);
         ObservableList<SubscriptionBean> list = FXCollections.observableArrayList(listMtTournament);
         table.setItems(list);
@@ -660,30 +660,30 @@ public class MainController implements Initializable {
             return cell;
         };
 
-        referee_detail_confirm.setCellFactory(cellFactory);
+        refereeDetailConfirm.setCellFactory(cellFactory);
     }
     @FXML
     public void backToHomeFromRefereeDetail(){
-        referee_detail_view.setVisible(false);
-        referee_page.setVisible(true);
+        refereeDetailView.setVisible(false);
+        refereePage.setVisible(true);
     }
 
     @FXML
     public void confirm() throws SQLException {
-        var driver = driver_name_confirm.getText();
-        var driverId = driver_id_confirm.getValue();
-        var tournament = driver_tournament_confirm.getText();
-        var tournamentId = driver_tournament_id_confirm.getValue();
-        var point = driver_point_confirm.getValue();
+        var driver = driverNameConfirm.getText();
+        var driverId = driverIdConfirm.getValue();
+        var tournament = driverTournamentConfirm.getText();
+        var tournamentId = driverTournamentIdConfirm.getValue();
+        var point = driverPointConfirm.getValue();
 
         new SubscriptionBean(driverId, tournamentId, point, driver, tournament);
         SubscriptionControllerApp.updateSubscription(point, driverId, tournamentId);
 
-        driver_name_confirm.setText("");
-        driver_id_confirm.getValueFactory().setValue(0);
-        driver_tournament_id_confirm.getValueFactory().setValue(0);
-        driver_point_confirm.getValueFactory().setValue(0);
-        driver_tournament_confirm.setText("");
+        driverNameConfirm.setText("");
+        driverIdConfirm.getValueFactory().setValue(0);
+        driverTournamentIdConfirm.getValueFactory().setValue(0);
+        driverPointConfirm.getValueFactory().setValue(0);
+        driverTournamentConfirm.setText("");
 
         detail(tournamentId);
     }
@@ -694,13 +694,13 @@ public class MainController implements Initializable {
     //region private methods
 
     private void confirmVote(SubscriptionBean subscription) throws SQLException {
-        driver_name_confirm.setText(subscription.getDriver());
-        driver_tournament_confirm.setText(subscription.getTournament());
-        driver_id_confirm.getValueFactory().setValue(subscription.getIdDriver());
-        driver_id_confirm.setEditable(false);
-        driver_tournament_id_confirm.getValueFactory().setValue(subscription.getIdTournament());
-        driver_id_confirm.setEditable(false);
-        driver_point_confirm.getValueFactory().setValue(subscription.getPoint());
+        driverNameConfirm.setText(subscription.getDriver());
+        driverTournamentConfirm.setText(subscription.getTournament());
+        driverIdConfirm.getValueFactory().setValue(subscription.getIdDriver());
+        driverIdConfirm.setEditable(false);
+        driverTournamentIdConfirm.getValueFactory().setValue(subscription.getIdTournament());
+        driverIdConfirm.setEditable(false);
+        driverPointConfirm.getValueFactory().setValue(subscription.getPoint());
     }
 
     private void payAndSubscription(MyTournament myTournament) throws Exception {
@@ -721,19 +721,19 @@ public class MainController implements Initializable {
         List<String> ListRole = new ArrayList<>(Arrays.asList(DataList.role));
 
         ObservableList<String> listData = FXCollections.observableArrayList(ListRole);
-        login_role.setItems(listData);
+        loginRole.setItems(listData);
     }
 
     private void setVisibleOfSigning(UserBean userBean, TextField adminUsername, PasswordField adminPassword, PasswordField adminConfirmPassword) throws Exception {
         userBean.setUsername(adminUsername.getText());
         userBean.setPassword(adminPassword.getText());
-        userBean.SetCheckPassword(adminConfirmPassword.getText());
-        userBean.setRole(login_role.getValue());
+        userBean.setCheckPassword(adminConfirmPassword.getText());
+        userBean.setRole(loginRole.getValue());
         userBean.checkIfPassIsEqual(userBean.getPassword(), userBean.getCheckPassword());
         Boolean check = UserControllerApp.signing(userBean);
         if(check) {
-            admin_form.setVisible(false);
-            login_form.setVisible(true);
+            adminForm.setVisible(false);
+            loginForm.setVisible(true);
         }
     }
 
@@ -745,19 +745,19 @@ public class MainController implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
         setRoleList();
         SpinnerValueFactory<Integer> spinner = new SpinnerValueFactory.IntegerSpinnerValueFactory(1,1000,1);
-        tournament_cost.setValueFactory(spinner);
+        tournamentCost.setValueFactory(spinner);
 
         SpinnerValueFactory<Integer> spinner2 = new SpinnerValueFactory.IntegerSpinnerValueFactory(1,100,1);
-        tournament_number.setValueFactory(spinner2);
+        tournamentNumber.setValueFactory(spinner2);
 
         SpinnerValueFactory<Integer> spinner3 = new SpinnerValueFactory.IntegerSpinnerValueFactory(0,10000, 0);
-        driver_point_confirm.setValueFactory(spinner3);
+        driverPointConfirm.setValueFactory(spinner3);
 
         SpinnerValueFactory<Integer> spinner4 = new SpinnerValueFactory.IntegerSpinnerValueFactory(0,1000000000, 0);
-        driver_tournament_id_confirm.setValueFactory(spinner4);
+        driverTournamentIdConfirm.setValueFactory(spinner4);
 
         SpinnerValueFactory<Integer> spinner5 = new SpinnerValueFactory.IntegerSpinnerValueFactory(0,1000000000, 0);
-        driver_id_confirm.setValueFactory(spinner5);
+        driverIdConfirm.setValueFactory(spinner5);
 
 
     }

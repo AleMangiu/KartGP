@@ -55,7 +55,7 @@ public class UserBean {
         this.role = role;
     }
 
-    public void SetCheckPassword(String checkPassword) { this.checkPassword = checkPassword; }
+    public void setCheckPassword(String checkPassword) { this.checkPassword = checkPassword; }
 
     public String getCheckPassword() {return checkPassword; }
     //endregion
