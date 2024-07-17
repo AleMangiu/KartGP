@@ -13,7 +13,7 @@ public class TournamentDao {
 
     private final Logger logger = Logger.getLogger(TournamentDao.class.getName());
 
-    public void createTournament(Tournament tournament, int userId) throws Exception {
+    public void createTournament(Tournament tournament, int userId) throws SQLException {
         Connection conn = DbConnection.getConnection();
         try (
                 PreparedStatement stmt = conn.prepareStatement(
@@ -34,7 +34,7 @@ public class TournamentDao {
             if (result == 1) {
                 logger.info("Tournament created");
             } else {
-                throw new Exception("Tournament not created");
+                throw new SQLException("Tournament not created");
             }
         }
     }
@@ -52,7 +52,7 @@ public class TournamentDao {
             stmt.setInt(1, id);
             try (ResultSet rs = stmt.executeQuery()) {
                 if (!rs.first()) {
-                    throw new Exception("Tournaments not found");
+                    throw new SQLException("Tournaments not found");
                 }
                 List<Tournament> tournaments = new ArrayList<>();
                 do {
@@ -69,7 +69,7 @@ public class TournamentDao {
                 while (rs.next());
                 return tournaments;
             } catch (Exception e) {
-                throw new RuntimeException(e);
+                throw new SQLException(e);
             }
         }
     }
@@ -85,7 +85,7 @@ public class TournamentDao {
         ){
             try (ResultSet rs = stmt.executeQuery()) {
                 if (!rs.first()) {
-                    throw new Exception("Tournaments not found");
+                    throw new SQLException("Tournaments not found");
                 }
                 List<Tournament> tournaments = new ArrayList<>();
                 do {
@@ -102,7 +102,7 @@ public class TournamentDao {
                 while (rs.next());
                 return tournaments;
             } catch (Exception e) {
-                throw new RuntimeException(e);
+                throw new SQLException(e);
             }
         }
     }

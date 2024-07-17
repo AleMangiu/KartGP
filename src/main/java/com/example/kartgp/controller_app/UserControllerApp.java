@@ -4,9 +4,11 @@ import com.example.kartgp.bean.UserBean;
 import com.example.kartgp.dao.UserDao;
 import com.example.kartgp.entity.User;
 
-import java.sql.SQLException;
-
 public class UserControllerApp {
+
+    private UserControllerApp() {
+        throw new IllegalStateException("Utility class");
+    }
 
     //region get
 

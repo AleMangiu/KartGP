@@ -24,7 +24,7 @@ public class LeadBoardDao {
         ){
             try (ResultSet rs = stmt.executeQuery()) {
                 if (!rs.first()) {
-                    throw new Exception("Tournaments not found");
+                    throw new InterruptedException("Tournaments not found");
                 }
                 List<LeadBoard> leadbords = new ArrayList<>();
                 do{
@@ -37,10 +37,10 @@ public class LeadBoardDao {
                 while (rs.next());
                 return leadbords;
             } catch (Exception e) {
-                throw new RuntimeException(e);
+                throw new IllegalArgumentException(e);
             }
         } catch (SQLException e) {
-            throw new RuntimeException(e);
+            throw new IllegalArgumentException(e);
         }
     }
 }

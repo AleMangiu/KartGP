@@ -86,9 +86,9 @@ public class TournamentBean {
     //endregion
 
     //region methods
-    public void checkField(String name, String where, LocalDate date, Integer cost, Integer number) throws Exception{
+    public void checkField(String name, String where, LocalDate date, Integer cost, Integer number) throws IllegalArgumentException{
         if (name.isEmpty() || where.isEmpty() || date == null || cost == null || number == null) {
-            throw new Exception("Please fill all the fields");
+            throw new IllegalArgumentException("Please fill all the fields");
         }
     }
     //endregion

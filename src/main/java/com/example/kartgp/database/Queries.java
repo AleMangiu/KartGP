@@ -2,6 +2,10 @@ package com.example.kartgp.database;
 
 public class Queries {
 
+    private Queries() {
+        throw new IllegalStateException("Utility class");
+    }
+
     public static final String FIND_USER =
             "SELECT * FROM user WHERE username = ? AND password = ?";
 

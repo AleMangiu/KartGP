@@ -336,7 +336,7 @@ public class MainController implements Initializable {
             }
 
         } catch (Exception e) {
-            throw new RuntimeException(e);
+            throw new ExceptionInInitializerError(e);
         }
     }
 
@@ -387,7 +387,7 @@ public class MainController implements Initializable {
             }
 
         } catch (Exception e) {
-            throw new RuntimeException(e);
+            throw new ExceptionInInitializerError(e);
         }
     }
 
@@ -472,7 +472,6 @@ public class MainController implements Initializable {
 
         TournamentControllerApp.createTournament(userGlobal, tournamentBean);
 
-        System.out.print("You have successfully created tournament " + tournamentName.getText());
     }
 
     //endregion
@@ -730,7 +729,8 @@ public class MainController implements Initializable {
         userBean.setCheckPassword(adminConfirmPassword.getText());
         userBean.setRole(loginRole.getValue());
         userBean.checkIfPassIsEqual(userBean.getPassword(), userBean.getCheckPassword());
-        if(UserControllerApp.signing(userBean)) {
+        boolean check = UserControllerApp.signing(userBean);
+        if(check) {
             adminForm.setVisible(false);
             loginForm.setVisible(true);
         }

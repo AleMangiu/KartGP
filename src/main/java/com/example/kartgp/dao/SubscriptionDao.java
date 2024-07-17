@@ -18,7 +18,7 @@ public class SubscriptionDao {
 
     private final Logger logger = Logger.getLogger(SubscriptionDao.class.getName());
 
-    public void payAndSubscription(User login, Tournament tournament) throws Exception {
+    public void payAndSubscription(User login, Tournament tournament) throws SQLException {
         Connection conn = DbConnection.getConnection();
         try (
                 PreparedStatement stmt = conn.prepareStatement(
@@ -37,7 +37,7 @@ public class SubscriptionDao {
             if (result == 1) {
                 logger.info("Subscription done");
             } else {
-                throw new Exception("Subscription not created");
+                throw new SQLException("Subscription not created");
             }
         }
     }
@@ -54,7 +54,7 @@ public class SubscriptionDao {
             stmt.setInt(1, id);
             try (ResultSet rs = stmt.executeQuery()) {
                 if (!rs.first()) {
-                    throw new Exception("Tournaments not found");
+                    throw new SQLException("Tournaments not found");
                 }
                 List<Subscription> subscriptions = new ArrayList<>();
                 do {
@@ -69,10 +69,10 @@ public class SubscriptionDao {
                 while (rs.next());
                 return subscriptions;
             } catch (Exception e) {
-                throw new RuntimeException(e);
+                throw new SQLException(e);
             }
         } catch (SQLException e) {
-            throw new RuntimeException(e);
+            throw new SQLException(e);
         }
     }
 
@@ -88,7 +88,7 @@ public class SubscriptionDao {
             stmt.setInt(1, id);
             try (ResultSet rs = stmt.executeQuery()) {
                 if (!rs.first()) {
-                    throw new Exception("Tournaments not found");
+                    throw new SQLException("Tournaments not found");
                 }
                 List<Tournament> tournaments = new ArrayList<>();
                 do{
@@ -105,10 +105,10 @@ public class SubscriptionDao {
                 while (rs.next());
                 return tournaments;
             } catch (Exception e) {
-                throw new RuntimeException(e);
+                throw new SQLException(e);
             }
         } catch (SQLException e) {
-            throw new RuntimeException(e);
+            throw new SQLException(e);
         }
     }
 
@@ -131,7 +131,7 @@ public class SubscriptionDao {
                 System.out.println("No record found with the provided ID.");
             }
         } catch (SQLException e) {
-            throw new RuntimeException(e);
+            throw new SQLException(e);
         }
     }
 }

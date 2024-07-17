@@ -37,7 +37,7 @@ public class MainCLIController {
                         signin();
                         return;
                     }
-                    default -> throw new Exception("Invalid choice");
+                    default -> throw new IllegalArgumentException("Invalid choice");
                 }
             } catch (Exception e) {
                 logger.log(Level.SEVERE, e.getMessage());
@@ -80,9 +80,6 @@ public class MainCLIController {
             userBean.setPassword(password);
             UserControllerApp.login(userBean);
             CLIPrinter.printMessage("Logged in");
-//            if (loginBean.getRole().equals("User")) new SearchBarCLIController().start(idSession);
-//
-//            if (loginBean.getRole().equals("TouristGuide")) new GuideConfirmCLIController().start(idSession);
 
         } catch (Exception e) {
             logger.log(Level.SEVERE, e.getMessage());

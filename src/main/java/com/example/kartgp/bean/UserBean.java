@@ -62,15 +62,15 @@ public class UserBean {
 
     //region methods
 
-    public void checkField(String username, String password) throws Exception{
+    public void checkField(String username, String password) throws IllegalArgumentException{
         if (username.isEmpty() || password.isEmpty()) {
-            throw new Exception("Please fill all the fields");
+            throw new IllegalArgumentException("Please fill all the fields");
         }
     }
 
-    public void checkIfPassIsEqual(String password, String checkPassword) throws Exception {
+    public void checkIfPassIsEqual(String password, String checkPassword) throws IllegalArgumentException {
         if (!password.equals(checkPassword)) {
-            throw new Exception("password is not Equal");
+            throw new IllegalArgumentException("password is not Equal");
         }
     }
 

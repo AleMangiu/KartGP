@@ -6,12 +6,17 @@ import com.example.kartgp.bean.MyTournament;
 import com.example.kartgp.dao.TournamentDao;
 import com.example.kartgp.entity.Tournament;
 
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
 public class TournamentControllerApp {
 
-    public static void createTournament(UserBean user, TournamentBean tournamentBean) throws Exception {
+    private TournamentControllerApp() {
+        throw new IllegalStateException("Utility class");
+    }
+
+    public static void createTournament(UserBean user, TournamentBean tournamentBean) throws ExceptionInInitializerError, Exception {
         TournamentDao tournamentDao = new TournamentDao();
         Tournament entity = new Tournament(tournamentBean.getName(), tournamentBean.getLocation(), tournamentBean.getNumber(), tournamentBean.getCost(), tournamentBean.getDate(), user.getUsername());
         tournamentDao.createTournament(entity, user.getId());
@@ -32,7 +37,7 @@ public class TournamentControllerApp {
         return tournamentBeans;
     }
 
-    public static List<MyTournament> getAllTournaments() throws Exception {
+    public static List<MyTournament> getAllTournaments() throws ExceptionInInitializerError, SQLException {
         TournamentDao tournamentDao = new TournamentDao();
         List<Tournament> tournamentList = tournamentDao.getAllTournaments();
         List<MyTournament> tournamentBeans = new ArrayList<>();

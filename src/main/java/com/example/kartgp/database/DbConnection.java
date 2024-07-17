@@ -5,6 +5,11 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class DbConnection {
+
+    private DbConnection() {
+        throw new IllegalStateException("Utility class");
+    }
+
     private static Connection connection;
     private static String dbUrl = "jdbc:mysql://localhost:3306/kartgp";
     private static String username = "root";

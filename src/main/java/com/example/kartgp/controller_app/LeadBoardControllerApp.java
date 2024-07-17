@@ -9,6 +9,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class LeadBoardControllerApp {
+    private LeadBoardControllerApp() {
+        throw new IllegalStateException("Utility class");
+    }
     public static List<LeadBoardBean> getLeadBoard() throws SQLException {
         LeadBoardDao leadBoardDao = new LeadBoardDao();
         var leadBoardsBean = new ArrayList<LeadBoardBean>();

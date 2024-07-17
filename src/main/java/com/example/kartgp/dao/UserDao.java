@@ -14,7 +14,7 @@ public class UserDao {
 
     private final Logger logger = Logger.getLogger(UserDao.class.getName());
 
-    public User login(String username, String password) throws Exception {
+    public User login(String username, String password) throws SQLException {
 
         Connection conn = DbConnection.getConnection();
         try (
@@ -29,7 +29,7 @@ public class UserDao {
 
             try (ResultSet rs = stmt.executeQuery()) {
                 if (!rs.first()) {
-                    throw new Exception("User not found");
+                    throw new SQLException("User not found");
                 }
                 rs.first();
                 int id = rs.getInt("id");
@@ -41,7 +41,7 @@ public class UserDao {
         }
     }
 
-    public void signing(String username, String password, String role) throws Exception {
+    public void signing(String username, String password, String role) throws SQLException {
         Connection conn = DbConnection.getConnection();
         try (
                 PreparedStatement stmt = conn.prepareStatement(
@@ -59,7 +59,7 @@ public class UserDao {
             if (result == 1) {
                 logger.info("User created");
             } else {
-                throw new Exception("User not created");
+                throw new SQLException("User not created");
             }
         }
     }
