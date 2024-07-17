@@ -12,6 +12,7 @@ import com.example.kartgp.entity.User;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Logger;
 
 public class SubscriptionControllerApp {
 
@@ -24,8 +25,8 @@ public class SubscriptionControllerApp {
         User user = new User(userBean.getId(), userBean.getUsername());
         Tournament tournament = new Tournament(tournamentBean.getId(), tournamentBean.getName());
         subscriptionDao.payAndSubscription(user, tournament);
-
-        System.out.print("You have subscription and pay");
+        Logger logger = Logger.getLogger(SubscriptionControllerApp.class.getName());
+        logger.info("You have subscription and pay");
     }
 
     public static List<SubscriptionBean> getTournamentSubscription(int id) throws SQLException {

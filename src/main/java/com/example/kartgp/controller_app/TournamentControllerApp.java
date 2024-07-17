@@ -22,7 +22,7 @@ public class TournamentControllerApp {
         tournamentDao.createTournament(entity, user.getId());
     }
 
-    public static List<MyTournament> getAllByAdminIdTournaments(Integer id) throws Exception {
+    public static List<MyTournament> getAllByAdminIdTournaments(Integer id) throws SQLException {
         TournamentDao tournamentDao = new TournamentDao();
         List<Tournament> tournamentList = tournamentDao.getAllByAdminIdTournaments(id);
         List<MyTournament> tournamentBeans = new ArrayList<>();

@@ -24,6 +24,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.ResourceBundle;
+import java.util.logging.Logger;
 
 public class MainController implements Initializable {
 
@@ -711,7 +712,8 @@ public class MainController implements Initializable {
     private void download(MyTournament tournament) throws SQLException {
         var driverList = SubscriptionControllerApp.getTournamentSubscription(tournament.getId());
         FileGeneretor.generateFile(tournament.getName(), driverList.toString());
-        System.out.println("File created successfully!");
+        Logger logger = Logger.getLogger(getClass().getName());
+        logger.info("File created successfully!");
     }
 
     private void setRoleList() {

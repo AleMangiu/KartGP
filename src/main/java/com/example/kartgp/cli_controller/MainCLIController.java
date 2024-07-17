@@ -5,7 +5,9 @@ import com.example.kartgp.controller_app.UserControllerApp;
 import com.example.kartgp.utilities.CLIPrinter;
 
 import java.io.BufferedReader;
+import java.io.IOException;
 import java.io.InputStreamReader;
+import java.sql.SQLException;
 import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -49,7 +51,7 @@ public class MainCLIController {
 
     //region private methods
 
-    private void signin() throws Exception {
+    private void signin() throws IOException, SQLException {
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         CLIPrinter.printMessage("username: ");
         String username = reader.readLine();
