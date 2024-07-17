@@ -126,11 +126,11 @@ public class SubscriptionDao {
             stmt.setInt(3, tournamentId);
             int affectedRows = stmt.executeUpdate();
             if (affectedRows > 0) {
-                Logger logger = Logger.getLogger(getClass().getName());
-                logger.info("Record updated successfully.");
+                Logger logger1 = Logger.getLogger(getClass().getName());
+                logger1.info("Record updated successfully.");
             } else {
-                Logger logger = Logger.getLogger(getClass().getName());
-                logger.info("No record found with the provided ID.");
+                Logger logger2 = Logger.getLogger(getClass().getName());
+                logger2.info("No record found with the provided ID.");
             }
         } catch (SQLException e) {
             throw new SQLException(e);
