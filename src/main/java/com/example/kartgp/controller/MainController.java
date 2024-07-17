@@ -29,6 +29,8 @@ public class MainController implements Initializable {
 
     //region properties
 
+    private static final String location = "location";
+
     @FXML
     private AnchorPane driverLeadboard;
 
@@ -405,7 +407,6 @@ public class MainController implements Initializable {
 
     @FXML
     public void viewMyTournamentForm(ActionEvent actionEvent) throws Exception {
-        String location = "location";
         adminPage.setVisible(false);
         adminCreateTournament.setVisible(false);
         viewMyTournament.setVisible(true);
@@ -480,7 +481,6 @@ public class MainController implements Initializable {
 
     @FXML
     public void joinTournament() throws Exception {
-        String location = "location";
         driverPage.setVisible(false);
         viewAllTournament.setVisible(true);
         driverName1.setText(userGlobal.getUsername());
@@ -539,7 +539,6 @@ public class MainController implements Initializable {
 
     @FXML
     public void viewMySubscription() throws SQLException {
-        String location = "location";
         driverPage.setVisible(false);
         driverMySubscription.setVisible(true);
         driverMySubscriptionName.setText(userGlobal.getUsername());
@@ -577,7 +576,6 @@ public class MainController implements Initializable {
     //region Referee
 
     private void goToRefereePage() throws Exception {
-        String location = "location";
         refereePage.setVisible(true);
         refereeName.setText(userGlobal.getUsername());
         refereeTournamentId.setCellValueFactory(new PropertyValueFactory<MyTournament, Integer>("id"));
