@@ -29,7 +29,7 @@ public class MainController implements Initializable {
 
     //region properties
 
-    private static final String location = "location";
+    private static final String LOCATION = "location";
 
     @FXML
     private AnchorPane driverLeadboard;
@@ -413,7 +413,7 @@ public class MainController implements Initializable {
         adminNameTournament.setText(userGlobal.getUsername());
         viewMyTournamentId.setCellValueFactory(new PropertyValueFactory<MyTournament, Integer>("id"));
         viewMyTournamentName.setCellValueFactory(new  PropertyValueFactory<MyTournament, String>("name"));
-        viewMyTournamentLocation.setCellValueFactory(new  PropertyValueFactory<MyTournament, String>(location));
+        viewMyTournamentLocation.setCellValueFactory(new  PropertyValueFactory<MyTournament, String>(LOCATION));
         viewMyTournamentDate.setCellValueFactory(new  PropertyValueFactory<MyTournament, LocalDate>("date"));
         var listMtTournament = TournamentControllerApp.getAllByAdminIdTournaments(userGlobal.getId());
         ObservableList<MyTournament> list = FXCollections.observableArrayList(listMtTournament);
@@ -486,7 +486,7 @@ public class MainController implements Initializable {
         driverName1.setText(userGlobal.getUsername());
         viewAllTournamentId.setCellValueFactory(new PropertyValueFactory<MyTournament, Integer>("id"));
         viewAllTournamentName.setCellValueFactory(new PropertyValueFactory<MyTournament, String>("name"));
-        viewAllTournamentLocation.setCellValueFactory(new  PropertyValueFactory<MyTournament, String>(location));
+        viewAllTournamentLocation.setCellValueFactory(new  PropertyValueFactory<MyTournament, String>(LOCATION));
         viewAllTournamentDate.setCellValueFactory(new PropertyValueFactory<MyTournament, LocalDate>("date"));
         viewAllTournamentCost.setCellValueFactory(new PropertyValueFactory<MyTournament, Integer>("cost"));
         var listMtTournament = TournamentControllerApp.getAllTournaments();
@@ -544,7 +544,7 @@ public class MainController implements Initializable {
         driverMySubscriptionName.setText(userGlobal.getUsername());
         driverMySubscriptionId.setCellValueFactory(new PropertyValueFactory<MyTournament, Integer>("id"));
         driverMySubscriptionTournamentName.setCellValueFactory(new PropertyValueFactory<MyTournament, String>("name"));
-        driverMySubscriptionLocation.setCellValueFactory(new  PropertyValueFactory<MyTournament, String>(location));
+        driverMySubscriptionLocation.setCellValueFactory(new  PropertyValueFactory<MyTournament, String>(LOCATION));
         driverMySubscriptionDate.setCellValueFactory(new PropertyValueFactory<MyTournament, LocalDate>("date"));
         driverMySubscriptionCost.setCellValueFactory(new PropertyValueFactory<MyTournament, Integer>("cost"));
         var listMtTournament = SubscriptionControllerApp.getAllSubscriptionsByUser(userGlobal.getId());
@@ -580,7 +580,7 @@ public class MainController implements Initializable {
         refereeName.setText(userGlobal.getUsername());
         refereeTournamentId.setCellValueFactory(new PropertyValueFactory<MyTournament, Integer>("id"));
         refereeTournamentName.setCellValueFactory(new  PropertyValueFactory<MyTournament, String>("name"));
-        refereeLocation.setCellValueFactory(new  PropertyValueFactory<MyTournament, String>(location));
+        refereeLocation.setCellValueFactory(new  PropertyValueFactory<MyTournament, String>(LOCATION));
         refereeDate.setCellValueFactory(new  PropertyValueFactory<MyTournament, LocalDate>("date"));
         refereeCost.setCellValueFactory(new  PropertyValueFactory<MyTournament, Integer>("cost"));
         var listMtTournament = TournamentControllerApp.getAllTournaments();

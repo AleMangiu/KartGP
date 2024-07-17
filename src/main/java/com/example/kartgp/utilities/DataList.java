@@ -6,5 +6,5 @@ public class DataList {
         throw new IllegalStateException("Utility class");
     }
 
-    public static String[] role = {"Admin", "Driver", "Referee"};
+    public static final String[] role = {"Admin", "Driver", "Referee"};
 }

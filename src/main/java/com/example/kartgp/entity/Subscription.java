@@ -3,7 +3,7 @@ package com.example.kartgp.entity;
 public class Subscription {
     private int point;
     private String driver;
-    public String tournament;
+    public static String tournament;
     private int idDriver;
     private int idTournament;
 
