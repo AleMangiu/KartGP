@@ -16,7 +16,7 @@ public class TournamentControllerApp {
         throw new IllegalStateException("Utility class");
     }
 
-    public static void createTournament(UserBean user, TournamentBean tournamentBean) throws ExceptionInInitializerError, Exception {
+    public static void createTournament(UserBean user, TournamentBean tournamentBean) throws SQLException {
         TournamentDao tournamentDao = new TournamentDao();
         Tournament entity = new Tournament(tournamentBean.getName(), tournamentBean.getLocation(), tournamentBean.getNumber(), tournamentBean.getCost(), tournamentBean.getDate(), user.getUsername());
         tournamentDao.createTournament(entity, user.getId());

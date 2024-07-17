@@ -19,7 +19,7 @@ public class SubscriptionControllerApp {
         throw new IllegalStateException("Utility class");
     }
 
-    public static void payAndSubscription(UserBean userBean, TournamentBean tournamentBean) throws Exception {
+    public static void payAndSubscription(UserBean userBean, TournamentBean tournamentBean) throws SQLException {
         SubscriptionDao subscriptionDao = new SubscriptionDao();
         User user = new User(userBean.getId(), userBean.getUsername());
         Tournament tournament = new Tournament(tournamentBean.getId(), tournamentBean.getName());

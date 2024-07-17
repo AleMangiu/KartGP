@@ -4,6 +4,8 @@ import com.example.kartgp.bean.UserBean;
 import com.example.kartgp.dao.UserDao;
 import com.example.kartgp.entity.User;
 
+import java.sql.SQLException;
+
 public class UserControllerApp {
 
     private UserControllerApp() {
@@ -12,7 +14,7 @@ public class UserControllerApp {
 
     //region get
 
-    public static void login(UserBean userBean) throws Exception{
+    public static void login(UserBean userBean) throws SQLException {
         UserDao userDao = new UserDao();
         User user = userDao.login(userBean.getUsername(), userBean.getPassword());
         userBean.setRole(user.getRole());
@@ -21,7 +23,7 @@ public class UserControllerApp {
         userBean.setId(user.getId());
     }
 
-    public static Boolean signing(UserBean userBean) throws Exception {
+    public static Boolean signing(UserBean userBean) throws SQLException {
         UserDao userDao = new UserDao();
         userDao.signing(userBean.getUsername(), userBean.getPassword(), userBean.getRole());
         return true;
