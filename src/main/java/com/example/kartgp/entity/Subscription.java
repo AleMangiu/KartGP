@@ -51,7 +51,7 @@ public class Subscription {
         return tournament;
     }
 
-    public void setTournament(String tournament) {
-        this.tournament = tournament;
+    public static void setTournament(String tournament) {
+        Subscription.tournament = tournament;
     }
 }
