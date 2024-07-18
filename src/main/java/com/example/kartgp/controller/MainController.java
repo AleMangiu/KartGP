@@ -421,7 +421,7 @@ public class MainController implements Initializable {
         tableMyTournament.setItems(list);
 
         Callback<TableColumn<MyTournament, String >, TableCell<MyTournament, String>> cellFactory =(param) ->{
-            final TableCell<MyTournament, String> cell = new TableCell<MyTournament, String>(){
+            return new TableCell<MyTournament, String>(){
                 @Override
                 public void updateItem(String item, boolean empty){
                     super.updateItem(item, empty);
@@ -444,7 +444,6 @@ public class MainController implements Initializable {
                 }
 
             };
-            return cell;
         };
 
         viewMyTournamentButton.setCellFactory(cellFactory);
@@ -495,7 +494,7 @@ public class MainController implements Initializable {
         tableAllTournament.setItems(list);
 
         Callback<TableColumn<MyTournament, String >, TableCell<MyTournament, String>> cellFactory =(param) ->{
-            final TableCell<MyTournament, String> cell = new TableCell<MyTournament, String>(){
+            return new TableCell<MyTournament, String>(){
                 @Override
                 public void updateItem(String item, boolean empty){
                     super.updateItem(item, empty);
@@ -518,7 +517,6 @@ public class MainController implements Initializable {
                 }
 
             };
-            return cell;
         };
 
         viewAllAction.setCellFactory(cellFactory);
@@ -589,7 +587,7 @@ public class MainController implements Initializable {
         refereeTable.setItems(list);
 
         Callback<TableColumn<MyTournament, String >, TableCell<MyTournament, String>> cellFactory =(param) ->{
-            final TableCell<MyTournament, String> cell = new TableCell<MyTournament, String>(){
+            return new TableCell<MyTournament, String>(){
                 @Override
                 public void updateItem(String item, boolean empty){
                     super.updateItem(item, empty);
@@ -612,7 +610,6 @@ public class MainController implements Initializable {
                 }
 
             };
-            return cell;
         };
 
         refereeDetail.setCellFactory(cellFactory);
@@ -632,7 +629,7 @@ public class MainController implements Initializable {
         table.setItems(list);
 
         Callback<TableColumn<SubscriptionBean, String >, TableCell<SubscriptionBean, String>> cellFactory =(param) ->{
-            final TableCell<SubscriptionBean, String> cell = new TableCell<SubscriptionBean, String>(){
+            return new TableCell<SubscriptionBean, String>(){
                 @Override
                 public void updateItem(String item, boolean empty){
                     super.updateItem(item, empty);
@@ -655,7 +652,6 @@ public class MainController implements Initializable {
                 }
 
             };
-            return cell;
         };
 
         refereeDetailConfirm.setCellFactory(cellFactory);
