@@ -22,7 +22,7 @@ public class LeadBoardDao {
                         ResultSet.CONCUR_READ_ONLY
                 )
         ){
-            try (ResultSet rs = stmt.executeQuery()) {
+             ResultSet rs = stmt.executeQuery();
                 if (!rs.first()) {
                     throw new SQLException("Tournaments not found");
                 }
@@ -36,9 +36,8 @@ public class LeadBoardDao {
                 }
                 while (rs.next());
                 return leadbords;
-            } catch (Exception e) {
-                throw new IllegalArgumentException(e);
-            }
+
+
         } catch (SQLException e) {
             throw new IllegalArgumentException(e);
         }
