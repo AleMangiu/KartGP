@@ -687,7 +687,7 @@ public class MainController implements Initializable {
 
     //region private methods
 
-    private void confirmVote(SubscriptionBean subscription) throws SQLException {
+    public void confirmVote(SubscriptionBean subscription) throws SQLException {
         driverNameConfirm.setText(subscription.getDriver());
         driverTournamentConfirm.setText(subscription.getTournament());
         driverIdConfirm.getValueFactory().setValue(subscription.getIdDriver());
@@ -697,7 +697,7 @@ public class MainController implements Initializable {
         driverPointConfirm.getValueFactory().setValue(subscription.getPoint());
     }
 
-    private void payAndSubscription(MyTournament myTournament) throws Exception {
+    public void payAndSubscription(MyTournament myTournament) throws Exception {
         TournamentBean tournamentBean = new TournamentBean(myTournament.getId(), myTournament.getName());
         SubscriptionControllerApp.payAndSubscription(userGlobal, tournamentBean);
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
@@ -705,7 +705,7 @@ public class MainController implements Initializable {
         alert.show();
     }
 
-    private void download(MyTournament tournament) throws SQLException {
+    public void download(MyTournament tournament) throws SQLException {
         var driverList = SubscriptionControllerApp.getTournamentSubscription(tournament.getId());
         FileGeneretor.generateFile(tournament.getName(), driverList.toString());
         Logger logger = Logger.getLogger(getClass().getName());
