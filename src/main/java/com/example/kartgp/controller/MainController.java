@@ -30,6 +30,9 @@ public class MainController implements Initializable {
     //region properties
 
     private static final String LOCATION = "location";
+    private static final String ROLE_1 = "Admin";
+    private static final String ROLE_2 = "Driver";
+    private static final String ROLE_3 = "Referee";
 
     @FXML
     private AnchorPane driverLeadboard;
@@ -320,19 +323,19 @@ public class MainController implements Initializable {
             UserControllerApp.login(userBean);
             userGlobal = userBean;
 
-            if(userBean.getRole().equals("Admin")) {
+            if(userBean.getRole().equals(ROLE_1)) {
                 adminPage.setVisible(true);
                 loginForm.setVisible(false);
                 adminName.setText(userBean.getUsername());
             }
 
-            if(userBean.getRole().equals("Driver")) {
+            if(userBean.getRole().equals(ROLE_2)) {
                 driverPage.setVisible(true);
                 loginForm.setVisible(false);
                 driverName.setText(userBean.getUsername());
             }
 
-            if(userBean.getRole().equals("Referee")) {
+            if(userBean.getRole().equals(ROLE_3)) {
                 loginForm.setVisible(false);
                 goToRefereePage();
             }
