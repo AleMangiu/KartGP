@@ -52,7 +52,7 @@ public class SubscriptionDao {
                 )
         ){
             stmt.setInt(1, id);
-            try (ResultSet rs = stmt.executeQuery()) {
+             ResultSet rs = stmt.executeQuery();
                 if (!rs.first()) {
                     throw new SQLException("Tournaments not found");
                 }
@@ -68,9 +68,7 @@ public class SubscriptionDao {
                 }
                 while (rs.next());
                 return subscriptions;
-            } catch (Exception e) {
-                throw new SQLException(e);
-            }
+
         } catch (SQLException e) {
             throw new SQLException(e);
         }
@@ -86,7 +84,7 @@ public class SubscriptionDao {
                 )
         ){
             stmt.setInt(1, id);
-            try (ResultSet rs = stmt.executeQuery()) {
+            ResultSet rs = stmt.executeQuery();
                 if (!rs.first()) {
                     throw new SQLException("Tournaments not found");
                 }
@@ -104,9 +102,7 @@ public class SubscriptionDao {
                 }
                 while (rs.next());
                 return tournaments;
-            } catch (Exception e) {
-                throw new SQLException(e);
-            }
+            
         } catch (SQLException e) {
             throw new SQLException(e);
         }

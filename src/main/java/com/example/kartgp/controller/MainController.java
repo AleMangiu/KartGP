@@ -5,7 +5,6 @@ import com.example.kartgp.controller_app.LeadBoardControllerApp;
 import com.example.kartgp.controller_app.SubscriptionControllerApp;
 import com.example.kartgp.controller_app.TournamentControllerApp;
 import com.example.kartgp.controller_app.UserControllerApp;
-import com.example.kartgp.utilities.DataList;
 import com.example.kartgp.utilities.FileGeneretor;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -712,8 +711,10 @@ public class MainController implements Initializable {
         logger.info("File created successfully!");
     }
 
+    protected static final String[] role = {"Admin", "Driver", "Referee"};
+
     private void setRoleList() {
-        List<String> listRole = new ArrayList<>(Arrays.asList(DataList.role));
+        List<String> listRole = new ArrayList<>(Arrays.asList(role));
 
         ObservableList<String> listData = FXCollections.observableArrayList(listRole);
         loginRole.setItems(listData);
