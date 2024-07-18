@@ -34,11 +34,11 @@ public class SubscriptionControllerApp {
         List<SubscriptionBean> subscriptionBeans = new ArrayList<>();
         var subscriptionList = subscriptionDao.getTournamentSubscription(id);
         for (Subscription subscription : subscriptionList) {
-            var driver = subscription.getDriver();
-            var tournament = subscription.getTournament();
-            var driverId = subscription.getIdDriver();
-            var tournamentId = subscription.getIdTournament();
-            var vote = subscription.getPoint();
+            var driver = subscription.getDriverEntity();
+            var tournament = subscription.getTournamentEntity();
+            var driverId = subscription.getIdDriverEntity();
+            var tournamentId = subscription.getIdTournamentEntity();
+            var vote = subscription.getPointEntity();
             SubscriptionBean subscriptionBean = new SubscriptionBean(driverId, tournamentId, vote, driver,tournament);
             subscriptionBeans.add(subscriptionBean);
         }

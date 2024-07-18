@@ -1,57 +1,57 @@
 package com.example.kartgp.entity;
 
 public class Subscription {
-    private int point;
-    private String driver;
-    private String tournament;
-    private int idDriver;
-    private int idTournament;
+    private int pointEntity;
+    private String driverEntity;
+    private String tournamentEntity;
+    private int idDriverEntity;
+    private int idTournamentEntity;
 
-    public Subscription(int idDriver, int idTournament, int point, String driver, String tournament) {
-        this.point = point;
-        this.idDriver = idDriver;
-        this.idTournament = idTournament;
-        this.driver = driver;
-        this.tournament = tournament;
+    public Subscription(int idDriverEntity, int idTournamentEntity, int pointEntity, String driverEntity, String tournamentEntity) {
+        this.pointEntity = pointEntity;
+        this.idDriverEntity = idDriverEntity;
+        this.idTournamentEntity = idTournamentEntity;
+        this.driverEntity = driverEntity;
+        this.tournamentEntity = tournamentEntity;
     }
 
-    public int getPoint() {
-        return point;
+    public int getPointEntity() {
+        return pointEntity;
     }
 
-    public void setPoint(int point) {
-        this.point = point;
+    public void setPointEntity(int pointEntity) {
+        this.pointEntity = pointEntity;
     }
 
-    public int getIdDriver() {
-        return idDriver;
+    public int getIdDriverEntity() {
+        return idDriverEntity;
     }
 
-    public void setIdDriver(int idDriver) {
-        this.idDriver = idDriver;
+    public void setIdDriverEntity(int idDriverEntity) {
+        this.idDriverEntity = idDriverEntity;
     }
 
-    public int getIdTournament() {
-        return idTournament;
+    public int getIdTournamentEntity() {
+        return idTournamentEntity;
     }
 
-    public void setIdTournament(int idTournament) {
-        this.idTournament = idTournament;
+    public void setIdTournamentEntity(int idTournamentEntity) {
+        this.idTournamentEntity = idTournamentEntity;
     }
 
-    public String getDriver() {
-        return driver;
+    public String getDriverEntity() {
+        return driverEntity;
     }
 
-    public void setDriver(String driver) {
-        this.driver = driver;
+    public void setDriverEntity(String driverEntity) {
+        this.driverEntity = driverEntity;
     }
 
-    public String getTournament() {
-        return tournament;
+    public String getTournamentEntity() {
+        return tournamentEntity;
     }
 
-    public void setTournament(String tournament) {
-        this.tournament = tournament;
+    public void setTournamentEntity(String tournamentEntity) {
+        this.tournamentEntity = tournamentEntity;
     }
 }
