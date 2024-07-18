@@ -348,19 +348,19 @@ public class MainController implements Initializable {
     @FXML
     public void switchForm() {
         switch (loginRole.getSelectionModel().getSelectedItem()) {
-            case "Admin" -> {
+            case ROLE_1 -> {
                 adminForm.setVisible(true);
                 refreeForm.setVisible(false);
                 driverForm.setVisible(false);
                 loginForm.setVisible(false);
             }
-            case "Driver" -> {
+            case ROLE_2 -> {
                 adminForm.setVisible(false);
                 refreeForm.setVisible(false);
                 driverForm.setVisible(true);
                 loginForm.setVisible(false);
             }
-            case "Referee" -> {
+            case ROLE_3 -> {
                 refreeForm.setVisible(true);
                 driverForm.setVisible(false);
                 refreeForm.setVisible(true);
