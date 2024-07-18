@@ -24,7 +24,7 @@ import static org.junit.jupiter.api.Assertions.fail;
             UserDao userDao = new UserDao();
             User user = userDao.login(username,password);
             assertNotNull(user);
-            assertEquals(username, user.getUsername(), "username should match");
+            assertEquals(username, user.getUsernameEntity(), "username should match");
         } catch (Exception e) {
             fail("Exception not expected", e);
         }

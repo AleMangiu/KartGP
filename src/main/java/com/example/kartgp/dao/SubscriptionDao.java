@@ -27,10 +27,10 @@ public class SubscriptionDao {
                         ResultSet.CONCUR_READ_ONLY
                 )
         ) {
-            stmt.setInt(1, login.getId());
+            stmt.setInt(1, login.getIdEntity());
             stmt.setInt(2, tournament.getId());
             stmt.setInt(3, 0);
-            stmt.setString(4, login.getUsername());
+            stmt.setString(4, login.getUsernameEntity());
             stmt.setString(5, tournament.getName());
             int result = stmt.executeUpdate();
 
@@ -102,7 +102,7 @@ public class SubscriptionDao {
                 }
                 while (rs.next());
                 return tournaments;
-            
+
         } catch (SQLException e) {
             throw new SQLException(e);
         }

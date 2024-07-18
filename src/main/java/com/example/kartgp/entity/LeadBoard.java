@@ -1,37 +1,37 @@
 package com.example.kartgp.entity;
 
 public class LeadBoard {
-    private String driver;
-    private int numberRace;
-    private int totalPoint;
+    private String driverEntity;
+    private int numberRaceEntity;
+    private int totalPointEntity;
 
-    public LeadBoard(String driver, int numberRace, int totalPoint) {
-        this.driver = driver;
-        this.numberRace = numberRace;
-        this.totalPoint = totalPoint;
+    public LeadBoard(String driverEntity, int numberRaceEntity, int totalPointEntity) {
+        this.driverEntity = driverEntity;
+        this.numberRaceEntity = numberRaceEntity;
+        this.totalPointEntity = totalPointEntity;
     }
 
-    public String getDriver() {
-        return driver;
+    public String getDriverEntity() {
+        return driverEntity;
     }
 
-    public void setDriver(String driver) {
-        this.driver = driver;
+    public void setDriverEntity(String driverEntity) {
+        this.driverEntity = driverEntity;
     }
 
-    public int getNumberRace() {
-        return numberRace;
+    public int getNumberRaceEntity() {
+        return numberRaceEntity;
     }
 
-    public void setNumberRace(int numberRace) {
-        this.numberRace = numberRace;
+    public void setNumberRaceEntity(int numberRaceEntity) {
+        this.numberRaceEntity = numberRaceEntity;
     }
 
-    public int getTotalPoint() {
-        return totalPoint;
+    public int getTotalPointEntity() {
+        return totalPointEntity;
     }
 
-    public void setTotalPoint(int totalPoint) {
-        this.totalPoint = totalPoint;
+    public void setTotalPointEntity(int totalPointEntity) {
+        this.totalPointEntity = totalPointEntity;
     }
 }

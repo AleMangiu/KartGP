@@ -17,7 +17,7 @@ public class LeadBoardControllerApp {
         var leadBoardsBean = new ArrayList<LeadBoardBean>();
         var leadBoards = leadBoardDao.getLeadboard();
         for (LeadBoard leadBoard : leadBoards) {
-            leadBoardsBean.add(new LeadBoardBean(leadBoard.getDriver(), leadBoard.getNumberRace(), leadBoard.getTotalPoint()));
+            leadBoardsBean.add(new LeadBoardBean(leadBoard.getDriverEntity(), leadBoard.getNumberRaceEntity(), leadBoard.getTotalPointEntity()));
         }
         return  leadBoardsBean;
     }

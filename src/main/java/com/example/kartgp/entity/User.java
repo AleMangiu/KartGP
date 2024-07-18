@@ -3,58 +3,58 @@ package com.example.kartgp.entity;
 public class User {
 
     //region properties
-    private int id;
-    private String username;
-    private String password;
-    private String role;
+    private int idEntity;
+    private String usernameEntity;
+    private String passwordEntity;
+    private String roleEntity;
     //endregion
 
     //region constructor
 
-    public User(int id, String username, String role) {
-        this.id = id;
-        this.username = username;
-        this.role = role;
+    public User(int idEntity, String usernameEntity, String roleEntity) {
+        this.idEntity = idEntity;
+        this.usernameEntity = usernameEntity;
+        this.roleEntity = roleEntity;
     }
 
-    public User(int id, String username) {
-        this.id = id;
-        this.username = username;
+    public User(int idEntity, String usernameEntity) {
+        this.idEntity = idEntity;
+        this.usernameEntity = usernameEntity;
     }
 
     //endregion
 
     //region getter setter
-    public int getId() {
-        return id;
+    public int getIdEntity() {
+        return idEntity;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setIdEntity(int idEntity) {
+        this.idEntity = idEntity;
     }
 
-    public String getUsername() {
-        return username;
+    public String getUsernameEntity() {
+        return usernameEntity;
     }
 
-    public void setUsername(String username) {
-        this.username = username;
+    public void setUsernameEntity(String usernameEntity) {
+        this.usernameEntity = usernameEntity;
     }
 
-    public String getPassword() {
-        return password;
+    public String getPasswordEntity() {
+        return passwordEntity;
     }
 
-    public void setPassword(String password) {
-        this.password = password;
+    public void setPasswordEntity(String passwordEntity) {
+        this.passwordEntity = passwordEntity;
     }
 
-    public String getRole() {
-        return role;
+    public String getRoleEntity() {
+        return roleEntity;
     }
 
-    public void setRole(String role) {
-        this.role = role;
+    public void setRoleEntity(String roleEntity) {
+        this.roleEntity = roleEntity;
     }
     //endregion
 

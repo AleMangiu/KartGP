@@ -17,10 +17,10 @@ public class UserControllerApp {
     public static void login(UserBean userBean) throws SQLException {
         UserDao userDao = new UserDao();
         User user = userDao.login(userBean.getUsername(), userBean.getPassword());
-        userBean.setRole(user.getRole());
-        userBean.setUsername(user.getUsername());
-        userBean.setPassword(user.getPassword());
-        userBean.setId(user.getId());
+        userBean.setRole(user.getRoleEntity());
+        userBean.setUsername(user.getUsernameEntity());
+        userBean.setPassword(user.getPasswordEntity());
+        userBean.setId(user.getIdEntity());
     }
 
     public static Boolean signing(UserBean userBean) throws SQLException {
