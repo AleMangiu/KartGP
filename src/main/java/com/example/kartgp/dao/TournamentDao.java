@@ -51,23 +51,7 @@ public class TournamentDao {
         ){
             stmt.setInt(1, id);
             try (ResultSet rs = stmt.executeQuery()) {
-                if (!rs.first()) {
-                    throw new SQLException("Tournaments not found");
-                }
-                List<Tournament> tournaments = new ArrayList<>();
-                do {
-                    tournaments.add(new Tournament(
-                            rs.getInt("id"),
-                            rs.getString("name"),
-                            rs.getString("location"),
-                            rs.getInt("number"),
-                            rs.getInt("cost"),
-                            rs.getDate("date").toLocalDate(),
-                            rs.getString("creatorName")
-                    ));
-                }
-                while (rs.next());
-                return tournaments;
+                return getTournaments(rs);
             } catch (Exception e) {
                 throw new SQLException(e);
             }
@@ -84,26 +68,31 @@ public class TournamentDao {
                 )
         ){
             try (ResultSet rs = stmt.executeQuery()) {
-                if (!rs.first()) {
-                    throw new SQLException("Tournaments not found");
-                }
-                List<Tournament> tournaments = new ArrayList<>();
-                do {
-                    tournaments.add(new Tournament(
-                            rs.getInt("id"),
-                            rs.getString("name"),
-                            rs.getString("location"),
-                            rs.getInt("number"),
-                            rs.getInt("cost"),
-                            rs.getDate("date").toLocalDate(),
-                            rs.getString("creatorName")
-                    ));
-                }
-                while (rs.next());
-                return tournaments;
+                return getTournaments(rs);
             } catch (Exception e) {
                 throw new SQLException(e);
             }
         }
     }
+
+    private List <Tournament> getTournaments (ResultSet rs) throws SQLException {
+        if (!rs.first()) {
+            throw new SQLException("Tournaments not found");
+        }
+        List<Tournament> tournaments = new ArrayList<>();
+        do {
+            tournaments.add(new Tournament(
+                    rs.getInt("id"),
+                    rs.getString("name"),
+                    rs.getString("location"),
+                    rs.getInt("number"),
+                    rs.getInt("cost"),
+                    rs.getDate("date").toLocalDate(),
+                    rs.getString("creatorName")
+            ));
+        }
+        while (rs.next());
+        return tournaments;
+    }
+
 }
