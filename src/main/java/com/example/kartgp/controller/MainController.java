@@ -715,7 +715,7 @@ public class MainController implements Initializable {
     }
 
     private void setRoleList() {
-        String[] role = {"Admin", "Driver", "Referee"};
+        String[] role = {ROLE_1, ROLE_2, ROLE_3};
         List<String> listRole = new ArrayList<>(Arrays.asList(role));
 
         ObservableList<String> listData = FXCollections.observableArrayList(listRole);
