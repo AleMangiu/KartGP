@@ -1,8 +1,14 @@
 package com.example.kartgp.database;
 
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.InputStream;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
+import java.util.Properties;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class DbConnection {
 
@@ -11,12 +17,26 @@ public class DbConnection {
     }
 
     private static Connection connection;
-    private static String dbUrl = "jdbc:mysql://localhost:3306/kartgp";
-    private static String username = "root";
-    private static String password = "1234";
 
-    public static Connection getConnection() throws SQLException {
-        connection = DriverManager.getConnection(dbUrl, username, password);
+    static {
+        try (InputStream input = new FileInputStream("src/main/java/com/example/kartgp/database/config.properties")) {
+
+            Properties properties = new Properties();
+            properties.load(input);
+
+            String connectionUrl = properties.getProperty("dbUrl");
+            String user = properties.getProperty("username");
+            String pass = properties.getProperty("password");
+
+            connection = DriverManager.getConnection(connectionUrl, user, pass);
+        } catch (IOException | SQLException e) {
+            Logger logger = Logger.getLogger(DbConnection.class.getName());
+            logger.log(Level.WARNING, e.getMessage());
+        }
+    }
+
+    public static Connection getConnection() {
         return connection;
     }
+
 }
