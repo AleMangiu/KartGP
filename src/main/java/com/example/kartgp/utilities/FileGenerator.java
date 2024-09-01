@@ -14,7 +14,7 @@ public class FileGenerator {
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(fileName))) {
             writer.write(content);
         } catch (IOException e) {
-            e.printStackTrace();
+            throw new RuntimeException(e);
         }
     }
 }
