@@ -13,7 +13,7 @@ public class FileGenerator {
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(fileName))) {
             writer.write(content);
         } catch (Exception e) {
-            throw new RuntimeException(e);
+            throw new IllegalStateException("Utility");
         }
     }
 }
