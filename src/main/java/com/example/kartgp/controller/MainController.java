@@ -5,7 +5,12 @@ import com.example.kartgp.controller_app.LeadBoardControllerApp;
 import com.example.kartgp.controller_app.SubscriptionControllerApp;
 import com.example.kartgp.controller_app.TournamentControllerApp;
 import com.example.kartgp.controller_app.UserControllerApp;
-import com.example.kartgp.utilities.FileGeneretor;
+import com.example.kartgp.entity.Subscription;
+import com.example.kartgp.entity.Tournament;
+import com.example.kartgp.exception.DuplicateReceiptException;
+import com.example.kartgp.exception.ReceiptNotFoundException;
+import com.example.kartgp.utilities.FileGenerator;
+import com.opencsv.exceptions.CsvValidationException;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -16,6 +21,7 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
 import javafx.util.Callback;
 
+import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
 import java.time.LocalDate;
@@ -510,6 +516,14 @@ public class MainController implements Initializable {
                             MyTournament myTournament = getTableView().getItems().get(getIndex());
                             try {
                                 payAndSubscription(myTournament);
+                                ReceiptBean receiptBean = new ReceiptBean();
+                                List<SubscriptionBean> subscriptionBeanList = SubscriptionControllerApp.getTournamentSubscription(myTournament.getId());
+                                for(SubscriptionBean subscription : subscriptionBeanList) {
+                                    receiptBean.setDate(LocalDate.now());
+                                    receiptBean.setIdDriver(subscription.getIdDriver());
+                                    receiptBean.setIdTournament(subscription.getIdTournament());
+                                    SubscriptionControllerApp.createReceipt(receiptBean);
+                                }
                             } catch (Exception e) {
                                 throw new RuntimeException(e);
                             }
@@ -707,9 +721,9 @@ public class MainController implements Initializable {
         alert.show();
     }
 
-    public void download(MyTournament tournament) throws SQLException {
+    public void download(MyTournament tournament) throws SQLException, CsvValidationException, ReceiptNotFoundException, IOException, DuplicateReceiptException {
         var driverList = SubscriptionControllerApp.getTournamentSubscription(tournament.getId());
-        FileGeneretor.generateFile(tournament.getName(), driverList.toString());
+        FileGenerator.generateFile(tournament.getName(), driverList.toString());
         Logger logger = Logger.getLogger(getClass().getName());
         logger.info("File created successfully!");
     }

@@ -4,9 +4,9 @@ import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
 
-public class FileGeneretor {
+public class FileGenerator {
 
-    private FileGeneretor() {
+    private FileGenerator() {
         throw new IllegalStateException("Utility class");
     }
 

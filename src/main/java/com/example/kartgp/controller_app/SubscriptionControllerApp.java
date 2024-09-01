@@ -4,12 +4,21 @@ import com.example.kartgp.bean.MyTournament;
 import com.example.kartgp.bean.SubscriptionBean;
 import com.example.kartgp.bean.TournamentBean;
 import com.example.kartgp.bean.UserBean;
+import com.example.kartgp.bean.ReceiptBean;
+import com.example.kartgp.dao.ReceiptDAO;
+import com.example.kartgp.dao.ReceiptDAOFactorySingleton;
 import com.example.kartgp.dao.SubscriptionDao;
+import com.example.kartgp.entity.Receipt;
 import com.example.kartgp.entity.Subscription;
 import com.example.kartgp.entity.Tournament;
 import com.example.kartgp.entity.User;
+import com.example.kartgp.exception.DuplicateReceiptException;
+import com.example.kartgp.exception.ReceiptNotFoundException;
+import com.opencsv.exceptions.CsvValidationException;
 
+import java.io.IOException;
 import java.sql.SQLException;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Logger;
@@ -64,5 +73,14 @@ public class SubscriptionControllerApp {
     public static void updateSubscription(int point, int id, int tournamentId) throws SQLException {
         SubscriptionDao subscriptionDao = new SubscriptionDao();
         subscriptionDao.updateSubscription(point, id, tournamentId);
+    }
+
+    public static void createReceipt(ReceiptBean receiptBean) throws IOException, SQLException, CsvValidationException, ReceiptNotFoundException, DuplicateReceiptException {
+
+        Receipt receipt = new Receipt(LocalDate.now(), receiptBean.getIdDriver(), receiptBean.getIdTournament());
+
+        ReceiptDAOFactorySingleton receiptDAOFactory = ReceiptDAOFactorySingleton.getInstance();
+        ReceiptDAO receiptDAO = receiptDAOFactory.createReceiptDAO();
+        receiptDAO.createReceipt(receipt);
     }
 }

@@ -2,7 +2,7 @@ package com.example.kartgp.bean;
 
 import java.time.LocalDate;
 
-public class MyTournament {
+public class  MyTournament {
 
     private int id;
     private String name;

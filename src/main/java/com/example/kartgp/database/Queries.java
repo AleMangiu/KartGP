@@ -35,4 +35,7 @@ public class Queries {
 
     public static final String GET_LEADBOARD =
             "CALL LeadBoard()";
+
+    public static final String INSERT_RECEIPT =
+            "INSERT INTO receipt (date, subscription_user_id, subscription_tournament_id) VALUES (?,?,?)";
 }
